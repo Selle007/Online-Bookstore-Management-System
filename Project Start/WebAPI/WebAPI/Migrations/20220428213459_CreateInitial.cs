@@ -12,6 +12,8 @@ namespace WebAPI.Migrations
                 name: "Books",
                 columns: table => new
                 {
+                    BookID = table.Column<int>(type: "int", nullable: false)
+                    .Annotation("SqlServer:Identity","1, 1"),
                     ISBN = table.Column<int>(type: "int", nullable: false),
                     BookName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     AuthorName = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -22,7 +24,7 @@ namespace WebAPI.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Books", x => x.ISBN);
+                    table.PrimaryKey("PK_Books", x => x.BookID);
                 });
         }
 

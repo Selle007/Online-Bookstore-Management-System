@@ -4,6 +4,7 @@ namespace WebAPI
     public class Book
     {
         [Key]
+        public int BookID { get; set; }
         public int ISBN{ get; set; }
         public String BookName{ get; set; } =String.Empty;  
         public String AuthorName { get; set; } = String.Empty;

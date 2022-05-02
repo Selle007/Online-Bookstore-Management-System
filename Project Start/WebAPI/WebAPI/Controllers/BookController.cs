@@ -20,10 +20,10 @@ namespace WebAPI.Controllers
             return Ok(await _context.Books.ToListAsync());
         }
 
-        [HttpGet("{isbn}")]
-        public async Task<ActionResult<List<Book>>> GetByISBN(int isbn)
+        [HttpGet("{id}")]
+        public async Task<ActionResult<List<Book>>> GetByISBN(int id)
         {
-            var book = await _context.Books.FindAsync(isbn);
+            var book = await _context.Books.FindAsync(id);
             if (book == null)
                 return BadRequest("Book not found!");
             return Ok(book);
@@ -40,7 +40,7 @@ namespace WebAPI.Controllers
         [HttpPut]
         public async Task<ActionResult<List<Book>>> UpdateBook(Book request)
         {
-            var dbBook = await _context.Books.FindAsync(request.ISBN);
+            var dbBook = await _context.Books.FindAsync(request.BookID);
             if (dbBook == null)
                 return BadRequest("Book not found!");
 
@@ -57,10 +57,10 @@ namespace WebAPI.Controllers
             return Ok(await _context.Books.ToListAsync());
         }
 
-        [HttpDelete("{isbn}")]
-        public async Task<ActionResult<List<Book>>> DeleteBook(int isbn)
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<List<Book>>> DeleteBook(int id)
         {
-            var dbBook = await _context.Books.FindAsync(isbn);
+            var dbBook = await _context.Books.FindAsync(id);
             if (dbBook == null)
                 return BadRequest("Book not found!");
 

@@ -2445,11 +2445,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Memo\\Desktop\\Lab 1\\Project Start\\WebAPI\\WebAPI\\WebAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Memo\\Source\\Repos\\Selle007\\Online-Bookstore-Management-System\\Project Start\\WebAPI\\WebAPI\\WebAPI.csproj",
       "projectName": "WebAPI",
-      "projectPath": "C:\\Users\\Memo\\Desktop\\Lab 1\\Project Start\\WebAPI\\WebAPI\\WebAPI.csproj",
+      "projectPath": "C:\\Users\\Memo\\Source\\Repos\\Selle007\\Online-Bookstore-Management-System\\Project Start\\WebAPI\\WebAPI\\WebAPI.csproj",
       "packagesPath": "C:\\Users\\Memo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Memo\\Desktop\\Lab 1\\Project Start\\WebAPI\\WebAPI\\obj\\",
+      "outputPath": "C:\\Users\\Memo\\Source\\Repos\\Selle007\\Online-Bookstore-Management-System\\Project Start\\WebAPI\\WebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Memo\\AppData\\Roaming\\NuGet\\NuGet.Config",
