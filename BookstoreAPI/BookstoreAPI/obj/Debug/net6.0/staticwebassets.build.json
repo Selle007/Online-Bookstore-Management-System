@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "l5M/VFBBayFWbcKACzgwPExZMv7Qe5k0NEXGUZetaBs=",
+  "Hash": "lrBvokmg9G1t7PzlVAE2rCXcdqPjBZlO4uEt1nkQEXg=",
   "Source": "BookstoreAPI",
   "BasePath": "_content/BookstoreAPI",
   "Mode": "Default",
@@ -9,10 +9,10 @@
   "DiscoveryPatterns": [],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Memo\\Desktop\\Online Bookstore Management System\\BookstoreAPI\\BookstoreAPI\\obj\\Debug\\net6.0\\scopedcss\\bundle\\BookstoreAPI.styles.css",
+      "Identity": "C:\\Users\\Memo\\Desktop\\Youtube API\\BookstoreAPI\\BookstoreAPI\\obj\\Debug\\net6.0\\scopedcss\\bundle\\BookstoreAPI.styles.css",
       "SourceId": "BookstoreAPI",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Memo\\Desktop\\Online Bookstore Management System\\BookstoreAPI\\BookstoreAPI\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\Memo\\Desktop\\Youtube API\\BookstoreAPI\\BookstoreAPI\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
       "BasePath": "_content/BookstoreAPI",
       "RelativePath": "BookstoreAPI.styles.css",
       "AssetKind": "All",
@@ -23,13 +23,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Memo\\Desktop\\Online Bookstore Management System\\BookstoreAPI\\BookstoreAPI\\obj\\Debug\\net6.0\\scopedcss\\bundle\\BookstoreAPI.styles.css"
+      "OriginalItemSpec": "C:\\Users\\Memo\\Desktop\\Youtube API\\BookstoreAPI\\BookstoreAPI\\obj\\Debug\\net6.0\\scopedcss\\bundle\\BookstoreAPI.styles.css"
     },
     {
-      "Identity": "C:\\Users\\Memo\\Desktop\\Online Bookstore Management System\\BookstoreAPI\\BookstoreAPI\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\BookstoreAPI.bundle.scp.css",
+      "Identity": "C:\\Users\\Memo\\Desktop\\Youtube API\\BookstoreAPI\\BookstoreAPI\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\BookstoreAPI.bundle.scp.css",
       "SourceId": "BookstoreAPI",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Memo\\Desktop\\Online Bookstore Management System\\BookstoreAPI\\BookstoreAPI\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\Memo\\Desktop\\Youtube API\\BookstoreAPI\\BookstoreAPI\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/BookstoreAPI",
       "RelativePath": "BookstoreAPI.bundle.scp.css",
       "AssetKind": "All",
@@ -40,7 +40,7 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Memo\\Desktop\\Online Bookstore Management System\\BookstoreAPI\\BookstoreAPI\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\BookstoreAPI.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\Memo\\Desktop\\Youtube API\\BookstoreAPI\\BookstoreAPI\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\BookstoreAPI.bundle.scp.css"
     }
   ]
 }
