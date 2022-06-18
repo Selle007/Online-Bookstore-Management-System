@@ -1,0 +1,9 @@
+body{
+ background-color: rgb(224, 224, 224);
+}
+
+
+.ui.inverted.secondary.top.fixed.menu{
+  font-size:20px;
+  background-color:rgb(0, 81, 255);
+}
