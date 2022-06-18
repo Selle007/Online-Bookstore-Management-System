@@ -55,6 +55,18 @@ export default function DashboardNav() {
         name="Stocks"
         style={{ marginRight: "20px", marginLeft: "20px" }}
       />
+      <Menu.Item
+        as={NavLink}
+        to="/dashboard/users"
+        name="Users"
+        style={{ marginRight: "20px", marginLeft: "20px" }}
+      />
+      <Menu.Item
+        as={NavLink}
+        to="/dashboard/roles"
+        name="Roles"
+        style={{ marginRight: "20px", marginLeft: "20px" }}
+      />
       
     </Menu>
   );

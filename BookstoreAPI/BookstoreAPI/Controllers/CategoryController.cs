@@ -1,9 +1,11 @@
 ﻿using BookstoreAPI.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookstoreAPI.Controllers
 {
+    [AllowAnonymous]
     [Route("api/[controller]")]
     [ApiController]
     public class CategoryController : ControllerBase
@@ -47,7 +49,7 @@ namespace BookstoreAPI.Controllers
                 return BadRequest("Category not found.");
 
             dbCategory.categoryName = request.categoryName;
-            dbCategory.categoryDescription = request.categoryDescription; 
+            dbCategory.categoryDescription = request.categoryDescription;
 
             await _context.SaveChangesAsync();
 
@@ -57,7 +59,7 @@ namespace BookstoreAPI.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCategory(int id)
         {
-            var dbCategory = await _context.Category.FindAsync(id); 
+            var dbCategory = await _context.Category.FindAsync(id);
             if (dbCategory == null)
                 return BadRequest("Category not found.");
 

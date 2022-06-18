@@ -3,9 +3,10 @@ import { Category } from '../models/category';
 import { Store } from '../models/store';
 import { Book } from '../models/book';
 import { Supplier } from "../models/supplier";
-import { User, UserFormValues } from '../models/user';
+import { User} from '../models/user';
 import { Order } from '../models/order';
 import { Stock } from '../models/stock';
+import { Role } from '../models/role';
 
 const sleep = (delay: number) => {
     return new Promise((resolve) =>{
@@ -80,16 +81,29 @@ const Stocks = {
     details: (stockId: string) => requests.get<Stock>(`/Stock/${stockId}`),
     create: (stock: Stock) => requests.post<void>(`/Stock`, stock),
     update: (stock: Stock) => axios.put<void>(`/Stock/${stock.stockId}`, stock),
-    delete: (stockId: string) => axios.delete<void>(`/OrdStockers/${stockId}`)
+    delete: (stockId: string) => axios.delete<void>(`/Stock/${stockId}`)
+
+}
+const Users = {
+    list: () => requests.get<User[]>('/Users'),
+    details: (userId: string) => requests.get<User>(`/Users/${userId}`),
+    create: (user: User) => requests.post<void>(`/Users`, user),
+    update: (user: User) => axios.put<void>(`/Users/${user.userId}`, user),
+    delete: (userId: string) => axios.delete<void>(`/Users/${userId}`)
 
 }
 
-const Account = {
-    current: () => requests.get<User>('/account'),
-    login: (user: UserFormValues) => requests.post<User>('/account/login', user),
-    register: (user: UserFormValues) => requests.post<User>('/account/register', user)
+const Roles = {
+    list: () => requests.get<Role[]>('/Role'),
+    details: (roleId: string) => requests.get<Role>(`/Role/${roleId}`),
+    create: (role: Role) => requests.post<void>(`/Role`, role),
+    update: (role: Role) => axios.put<void>(`/Role/${role.roleId}`, role),
+    delete: (roleId: string) => axios.delete<void>(`/Role/${roleId}`)
 
 }
+
+
+
 
 
 
@@ -98,7 +112,8 @@ const agent ={
     Stores,
     Books,
     Suppliers,
-    Account,
+    Users,
+    Roles,
     Orders,
     Stocks
 }

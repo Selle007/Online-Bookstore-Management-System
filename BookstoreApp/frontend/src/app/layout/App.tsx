@@ -24,6 +24,12 @@ import OrderForm from "../../features/dashboard/orders/form/OrderForm";
 import StockForm from "../../features/dashboard/stock/form/StockForm";
 import StockDashboard from "../../features/dashboard/stock/StockDashboard";
 import StockDetails from "../../features/dashboard/stock/StockDetails";
+import UserDashboard from "../../features/dashboard/users/UserDashboard";
+import UserDetails from "../../features/dashboard/users/UserDetails";
+import UserForm from "../../features/dashboard/users/form/UserForm";
+import RoleDashboard from "../../features/dashboard/roles/RoleDashboard";
+import RoleDetails from "../../features/dashboard/roles/RoleDetails";
+import RoleForm from "../../features/dashboard/roles/form/RoleForm";
 
 function App() {
   const location = useLocation();
@@ -77,7 +83,10 @@ function App() {
           />
 
           <Route path="/dashboard/suppliers" element={<SupplierDashboard />} />
-          <Route path="/dashboard/suppliers/:supplierId" element={<SupplierDetails />} />
+          <Route
+            path="/dashboard/suppliers/:supplierId"
+            element={<SupplierDetails />}
+          />
           <Route
             key={location.key}
             path="/dashboard/suppliers/createSupplier"
@@ -88,7 +97,6 @@ function App() {
             path="/dashboard/manage/supplier/:supplierId"
             element={<SupplierForm />}
           />
-          
 
           <Route path="/dashboard/orders" element={<OrderDashboard />} />
           <Route path="/dashboard/orders/:orderId" element={<OrderDetails />} />
@@ -103,7 +111,6 @@ function App() {
             element={<OrderForm />}
           />
 
-
           <Route path="/dashboard/stocks" element={<StockDashboard />} />
           <Route path="/dashboard/stocks/:stockId" element={<StockDetails />} />
           <Route
@@ -117,7 +124,31 @@ function App() {
             element={<StockForm />}
           />
 
-          
+          <Route path="/dashboard/users" element={<UserDashboard />} />
+          <Route path="/dashboard/users/:userId" element={<UserDetails />} />
+          <Route
+            key={location.key}
+            path="/dashboard/users/createUser"
+            element={<UserForm />}
+          />
+          <Route
+            key={location.key}
+            path="/dashboard/manage/users/:userId"
+            element={<UserForm />}
+          />
+
+          <Route path="/dashboard/roles" element={<RoleDashboard />} />
+          <Route path="/dashboard/roles/:roleId" element={<RoleDetails />} />
+          <Route
+            key={location.key}
+            path="/dashboard/roles/createRole"
+            element={<RoleForm />}
+          />
+          <Route
+            key={location.key}
+            path="/dashboard/manage/roles/:roleId"
+            element={<RoleForm />}
+          />
         </Routes>
       </Container>
     </>

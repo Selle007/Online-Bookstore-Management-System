@@ -1,12 +1,9 @@
 export interface User{
+    userId:string;
     username:string;
-    token: string;
-    image?: string;
-
-}
-
-export interface UserFormValues {
-    email?:string;
-    password: string;
-    username: string;
+    name:string;
+    surname:string;
+    email:string;
+    password:string;
+    roleId:string;
 }

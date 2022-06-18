@@ -7,6 +7,8 @@ import StoreStore from "./storeStore";
 import SupplierStore from "./supplierStore";
 import UserStore from "./userStore";
 import StockStore from "./stockStore";
+import UsersStore from "./usersStore";
+import RoleStore from "./roleStore";
 
 interface Store {
     categoryStore : CategoryStore,
@@ -17,6 +19,9 @@ interface Store {
     commonStore: CommonStore,
     orderStore : OrderStore,
     stockStore : StockStore,
+    usersStore: UsersStore,
+    roleStore : RoleStore,
+
 }
 
 export const store: Store = {
@@ -28,6 +33,8 @@ export const store: Store = {
     commonStore: new CommonStore(),
     orderStore: new OrderStore(),
     stockStore: new StockStore(),
+    usersStore: new UsersStore(),
+    roleStore: new RoleStore(),
 }
 
 export const StoreContext = createContext(store);
