@@ -43,6 +43,18 @@ export default function DashboardNav() {
         name="Suppliers"
         style={{ marginRight: "20px", marginLeft: "20px" }}
       />
+      <Menu.Item
+        as={NavLink}
+        to="/dashboard/orders"
+        name="Orders"
+        style={{ marginRight: "20px", marginLeft: "20px" }}
+      />
+      <Menu.Item
+        as={NavLink}
+        to="/dashboard/stocks"
+        name="Stocks"
+        style={{ marginRight: "20px", marginLeft: "20px" }}
+      />
       
     </Menu>
   );

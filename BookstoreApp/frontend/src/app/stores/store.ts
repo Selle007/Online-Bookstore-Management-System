@@ -1,9 +1,12 @@
 import { createContext, useContext } from "react";
 import BookStore from "./bookStore";
 import CategoryStore from "./categoryStore";
+import CommonStore from "./commonStore";
+import OrderStore from "./orderStore";
 import StoreStore from "./storeStore";
 import SupplierStore from "./supplierStore";
 import UserStore from "./userStore";
+import StockStore from "./stockStore";
 
 interface Store {
     categoryStore : CategoryStore,
@@ -11,6 +14,9 @@ interface Store {
     bookStore : BookStore,
     supplierStore: SupplierStore,
     userStore: UserStore,
+    commonStore: CommonStore,
+    orderStore : OrderStore,
+    stockStore : StockStore,
 }
 
 export const store: Store = {
@@ -19,6 +25,9 @@ export const store: Store = {
     bookStore: new BookStore(),
     supplierStore: new SupplierStore(),
     userStore: new UserStore(),
+    commonStore: new CommonStore(),
+    orderStore: new OrderStore(),
+    stockStore: new StockStore(),
 }
 
 export const StoreContext = createContext(store);

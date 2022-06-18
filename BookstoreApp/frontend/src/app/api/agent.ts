@@ -4,6 +4,8 @@ import { Store } from '../models/store';
 import { Book } from '../models/book';
 import { Supplier } from "../models/supplier";
 import { User, UserFormValues } from '../models/user';
+import { Order } from '../models/order';
+import { Stock } from '../models/stock';
 
 const sleep = (delay: number) => {
     return new Promise((resolve) =>{
@@ -65,6 +67,22 @@ const Suppliers = {
     delete: (supplierId: string) => axios.delete<void>(`/Supplier/${supplierId}`)
 
 }
+const Orders = {
+    list: () => requests.get<Order[]>('/Orders'),
+    details: (orderId: string) => requests.get<Order>(`/Orders/${orderId}`),
+    create: (order: Order) => requests.post<void>(`/Orders`, order),
+    update: (order: Order) => axios.put<void>(`/Orders/${order.orderId}`, order),
+    delete: (orderId: string) => axios.delete<void>(`/Orders/${orderId}`)
+
+}
+const Stocks = {
+    list: () => requests.get<Stock[]>('/Stock'),
+    details: (stockId: string) => requests.get<Stock>(`/Stock/${stockId}`),
+    create: (stock: Stock) => requests.post<void>(`/Stock`, stock),
+    update: (stock: Stock) => axios.put<void>(`/Stock/${stock.stockId}`, stock),
+    delete: (stockId: string) => axios.delete<void>(`/OrdStockers/${stockId}`)
+
+}
 
 const Account = {
     current: () => requests.get<User>('/account'),
@@ -80,7 +98,9 @@ const agent ={
     Stores,
     Books,
     Suppliers,
-    Account
+    Account,
+    Orders,
+    Stocks
 }
 
 export default agent;

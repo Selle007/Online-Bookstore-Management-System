@@ -17,7 +17,13 @@ import BookForm from "../../features/dashboard/books/form/BookForm";
 import SupplierForm from "../../features/dashboard/suppliers/form/SupplierForm";
 import SupplierDetails from "../../features/dashboard/suppliers/SupplierDetails";
 import SupplierDashboard from "../../features/dashboard/suppliers/SupplierDashboard";
-import LoginForm from "../../features/users/LoginForm";
+// import LoginForm from "../../features/users/LoginForm";
+import OrderDashboard from "../../features/dashboard/orders/OrderDashboard";
+import OrderDetails from "../../features/dashboard/orders/OrderDetails";
+import OrderForm from "../../features/dashboard/orders/form/OrderForm";
+import StockForm from "../../features/dashboard/stock/form/StockForm";
+import StockDashboard from "../../features/dashboard/stock/StockDashboard";
+import StockDetails from "../../features/dashboard/stock/StockDetails";
 
 function App() {
   const location = useLocation();
@@ -82,11 +88,36 @@ function App() {
             path="/dashboard/manage/supplier/:supplierId"
             element={<SupplierForm />}
           />
+          
+
+          <Route path="/dashboard/orders" element={<OrderDashboard />} />
+          <Route path="/dashboard/orders/:orderId" element={<OrderDetails />} />
           <Route
-            
-            path="/login"
-            element={<LoginForm />}
+            key={location.key}
+            path="/dashboard/orders/createOrder"
+            element={<OrderForm />}
           />
+          <Route
+            key={location.key}
+            path="/dashboard/manage/orders/:orderId"
+            element={<OrderForm />}
+          />
+
+
+          <Route path="/dashboard/stocks" element={<StockDashboard />} />
+          <Route path="/dashboard/stocks/:stockId" element={<StockDetails />} />
+          <Route
+            key={location.key}
+            path="/dashboard/stocks/createStock"
+            element={<StockForm />}
+          />
+          <Route
+            key={location.key}
+            path="/dashboard/manage/stocks/:stockId"
+            element={<StockForm />}
+          />
+
+          
         </Routes>
       </Container>
     </>
