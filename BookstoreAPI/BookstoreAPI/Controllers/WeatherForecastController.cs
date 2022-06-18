@@ -1,11 +1,9 @@
-using BookstoreAPI;
-using JWTAuthentication.NET6._0.Auth;
+
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookstoreAPI.Controllers
-{
-    [Authorize(Roles = UserRoles.Admin)]
+{ 
     [ApiController]
     [Route("api/[controller]")]
     public class WeatherForecastController : ControllerBase
@@ -21,7 +19,7 @@ namespace BookstoreAPI.Controllers
         {
             _logger = logger;
         }
-
+ 
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {

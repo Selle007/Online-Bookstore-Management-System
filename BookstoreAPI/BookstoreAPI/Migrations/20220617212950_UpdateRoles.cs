@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace BookstoreAPI.Migrations
 {
-    public partial class InitialUser : Migration
+    public partial class UpdateRoles : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
