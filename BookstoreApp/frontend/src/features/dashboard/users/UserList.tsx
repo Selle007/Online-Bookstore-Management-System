@@ -54,7 +54,7 @@ export default observer(function UserList() {
                   <div>{user.password}</div>
                 </Item.Description>
                 <Item.Description>
-                  <div>{user.roleId}</div>
+                  <div>{user.roleName}</div>
                 </Item.Description>
           
 

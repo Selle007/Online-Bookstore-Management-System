@@ -23,13 +23,13 @@ export default observer(function OrderForm() {
   const [order, setOrder] = useState({
     orderId: "",
     bookId: "",
-    UserName: "",
+    userId: "",
    
   });
 
   const validationSchema = Yup.object({
     bookId: Yup.string().required("The Book Id  is required"),
-    UserName: Yup.string().required("The User Name is required"),
+    userId: Yup.string().required("The User id is required"),
 
   });
 
@@ -72,7 +72,7 @@ export default observer(function OrderForm() {
               >
                 <MyTextInput name="bookId" placeholder="Book Id" />
 
-                <MyTextInput name="UserName" placeholder="User Name" />
+                <MyTextInput name="userId" placeholder="User Id" />
                 <Button
                 disabled={isSubmitting || !dirty || !isValid}
                   loading={loading}

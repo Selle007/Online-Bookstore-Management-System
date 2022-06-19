@@ -42,7 +42,7 @@ export default observer(function OrderList() {
                   <div>{order.bookId}</div>
                 </Item.Description>
                 <Item.Description>
-                  <div>{order.UserName}</div>
+                  <div>{order.userId}</div>
                 </Item.Description>
 
                 <Item.Extra>

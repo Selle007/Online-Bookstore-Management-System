@@ -49,7 +49,7 @@ namespace BookstoreAPI.Controllers
                 return BadRequest("Orders not found.");
 
             dbOrders.bookId = request.bookId;
-            dbOrders.UserName = request.UserName;
+            dbOrders.userId = request.userId;
            
 
 

@@ -81,3 +81,7 @@ C:\Users\Memo\Desktop\Youtube API\BookstoreAPI\BookstoreAPI\obj\Debug\net6.0\ref
 C:\Users\Memo\Desktop\Youtube API\BookstoreAPI\BookstoreAPI\obj\Debug\net6.0\BookstoreAPI.pdb
 C:\Users\Memo\Desktop\Youtube API\BookstoreAPI\BookstoreAPI\obj\Debug\net6.0\BookstoreAPI.genruntimeconfig.cache
 C:\Users\Memo\Desktop\Youtube API\BookstoreAPI\BookstoreAPI\obj\Debug\net6.0\ref\BookstoreAPI.dll
+C:\Users\Memo\Desktop\Youtube API\BookstoreAPI\BookstoreAPI\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Memo\Desktop\Youtube API\BookstoreAPI\BookstoreAPI\bin\Debug\net6.0\Scrutor.dll
+C:\Users\Memo\Desktop\Youtube API\BookstoreAPI\BookstoreAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.dll
+C:\Users\Memo\Desktop\Youtube API\BookstoreAPI\BookstoreAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll

@@ -10,7 +10,7 @@ namespace BookstoreAPI.Entities
         [ForeignKey("Book")]
         public int bookId { get; set; }
         [ForeignKey("AspNetUsers")]
-        public string UserName { get; set; }
+        public int userId { get; set; }
 
 
 

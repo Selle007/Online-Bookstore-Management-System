@@ -28,7 +28,7 @@ export default observer(function OrderDetails() {
         <Card.Content>
           <Card.Header>{order.orderId}</Card.Header>
           <Card.Description>{order.bookId}</Card.Description>
-          <Card.Description>{order.UserName}</Card.Description>
+          <Card.Description>{order.userId}</Card.Description>
         </Card.Content>
         <Card.Content extra>
           <Button.Group fluid>

@@ -28,7 +28,7 @@ export default observer(function UserForm() {
     surname: "",
     email: "",
     password: "",
-    roleId: "",
+    roleName: "",
     
   });
 
@@ -38,7 +38,7 @@ export default observer(function UserForm() {
     surname: Yup.string().required("The Surname is required"),
     email: Yup.string().required("The Email is required"),
     password: Yup.string().required("The Password is required"),
-    roleId: Yup.string().required("The Role Id is required"),
+    roleName: Yup.string().required("The Role name is required"),
   });
 
   useEffect(() => {
@@ -82,12 +82,11 @@ export default observer(function UserForm() {
                 <MyTextInput name="name" placeholder="Name" />
                 <MyTextInput name="surname" placeholder="Surname" />
                 <MyTextInput name="email" placeholder="Email" />
-                <MyTextInput name="password" placeholder="Passowrd" />
               
                 <MySelectInput
                   options={roleOptions}
-                  name="roleId"
-                  placeholder="Role Id"
+                  name="roleName"
+                  placeholder="Role Name"
                 />
                 <Button
                 disabled={isSubmitting || !dirty || !isValid}

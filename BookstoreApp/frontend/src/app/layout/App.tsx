@@ -17,7 +17,7 @@ import BookForm from "../../features/dashboard/books/form/BookForm";
 import SupplierForm from "../../features/dashboard/suppliers/form/SupplierForm";
 import SupplierDetails from "../../features/dashboard/suppliers/SupplierDetails";
 import SupplierDashboard from "../../features/dashboard/suppliers/SupplierDashboard";
-// import LoginForm from "../../features/users/LoginForm";
+import LoginForm from "../../features/users/LoginForm";
 import OrderDashboard from "../../features/dashboard/orders/OrderDashboard";
 import OrderDetails from "../../features/dashboard/orders/OrderDetails";
 import OrderForm from "../../features/dashboard/orders/form/OrderForm";
@@ -30,6 +30,7 @@ import UserForm from "../../features/dashboard/users/form/UserForm";
 import RoleDashboard from "../../features/dashboard/roles/RoleDashboard";
 import RoleDetails from "../../features/dashboard/roles/RoleDetails";
 import RoleForm from "../../features/dashboard/roles/form/RoleForm";
+import RegisterForm from "../../features/users/RegisterForm";
 
 function App() {
   const location = useLocation();
@@ -149,6 +150,9 @@ function App() {
             path="/dashboard/manage/roles/:roleId"
             element={<RoleForm />}
           />
+
+          <Route path="/login" element={<LoginForm />} />
+          <Route path="/register" element={<RegisterForm />} />
         </Routes>
       </Container>
     </>

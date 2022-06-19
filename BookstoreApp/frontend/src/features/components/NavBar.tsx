@@ -1,7 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { Button, Input, Menu } from "semantic-ui-react";
-import '../../app/layout/styles.css';
+import "../../app/layout/styles.css";
+import AuthService from "../users/AuthService";
 
 export default function Navbar() {
   return (
@@ -44,18 +45,41 @@ export default function Navbar() {
         name="Contact"
         style={{ marginRight: "20px", marginLeft: "20px" }}
       />
-      <Menu.Item
-        as={NavLink}
-        to="/dashboard"
-        name="Dashboard"
-        style={{ marginRight: "20px", marginLeft: "20px" }}
-      />
+      {AuthService.token && AuthService.isAdmin() &&(
+        <Menu.Item
+          as={NavLink}
+          to="/dashboard"
+          name="Dashboard"
+          style={{ marginRight: "20px", marginLeft: "20px" }}
+        />
+      )}
+
+
       <Menu.Menu position="right">
         <Menu.Item>
           <Input icon="search" placeholder="Search..." />
         </Menu.Item>
         <Menu.Item>
-          <Button className="loginBtn" floated="right" as={NavLink} to="/login" content="Login" />
+          {AuthService.getCurrentUser() ?
+          ( 
+          <Button
+            className="logoutBtn"
+            floated="right"
+            onClick={AuthService.logout}
+            as={NavLink}
+            to="/"
+            content="Logout"
+          />
+          ):(
+          <Button
+            className="loginBtn"
+            floated="right"
+            as={NavLink}
+            to="/login"
+            content="Login"
+          />
+          )}
+
         </Menu.Item>
       </Menu.Menu>
     </Menu>

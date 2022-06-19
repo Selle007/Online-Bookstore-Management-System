@@ -5,18 +5,18 @@ import { Button, Form, Label } from "semantic-ui-react";
 import MyTextInput from "../../app/common/form/MyTextInput";
 import AuthService from "./AuthService";
 
-export default observer(function LoginForm() {
-
-    
-  
+export default observer(function RefisterFrom() {
   return (
     <Formik
-      initialValues={{ username: "", password: "" }}
-      onSubmit={values => AuthService.login(values)}
+      initialValues={{ username: "", name: "", surname: "", email: "", password: "", roleName: "User" }}
+      onSubmit={values => AuthService.register(values)}
     >
       {({ handleSubmit, isSubmitting }) => (
         <Form className="ui form" onSubmit={handleSubmit} autoComplete="off">
           <MyTextInput name="username" placeholder="Username" />
+          <MyTextInput name="name" placeholder="Name"  />
+          <MyTextInput name="surname" placeholder="Surname" />
+          <MyTextInput name="email" placeholder="Email" type="email" />
           <MyTextInput name="password" placeholder="Password" type="password" />
         
           <Button
@@ -26,7 +26,7 @@ export default observer(function LoginForm() {
             type="submit"
             fluid
           />
-          <Label>Don't have an account? <a href="/register">Register.</a></Label>
+          <Label>Already have an account? <a href="/login">Login.</a></Label>
         </Form>
       )}
     </Formik>

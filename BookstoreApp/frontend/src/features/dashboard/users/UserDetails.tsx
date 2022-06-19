@@ -31,7 +31,7 @@ export default observer(function UserDetails() {
           <Card.Description>{user.surname}</Card.Description>
           <Card.Description>{user.email}</Card.Description>
           <Card.Description>{user.password}</Card.Description>
-          <Card.Description>{user.roleId}</Card.Description>
+          <Card.Description>{user.roleName}</Card.Description>
         </Card.Content>
         <Card.Content extra>
           <Button.Group fluid>

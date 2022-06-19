@@ -3,10 +3,11 @@ import { Category } from '../models/category';
 import { Store } from '../models/store';
 import { Book } from '../models/book';
 import { Supplier } from "../models/supplier";
-import { User} from '../models/user';
+import { User } from '../models/user';
 import { Order } from '../models/order';
 import { Stock } from '../models/stock';
 import { Role } from '../models/role';
+import { Token } from 'typescript';
 
 const sleep = (delay: number) => {
     return new Promise((resolve) =>{
@@ -101,10 +102,6 @@ const Roles = {
     delete: (roleId: string) => axios.delete<void>(`/Role/${roleId}`)
 
 }
-
-
-
-
 
 
 const agent ={

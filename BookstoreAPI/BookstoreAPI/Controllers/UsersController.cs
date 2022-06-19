@@ -32,6 +32,8 @@ namespace BookstoreAPI.Controllers
             return Ok(users);
         }
 
+
+
         [HttpPost]
         public async Task<ActionResult<List<Users>>> CreateUser(Users users)
         {
@@ -53,8 +55,10 @@ namespace BookstoreAPI.Controllers
             dbUsers.name = request.name;
             dbUsers.surname = request.surname;
             dbUsers.email = request.email;
-            dbUsers.password = request.password;
-            dbUsers.roleId = request.roleId;
+            dbUsers.RefreshToken = request.RefreshToken;
+            dbUsers.TokenCreated = request.TokenCreated;
+            dbUsers.TokenExpires = request.TokenExpires;
+            dbUsers.roleName = "User";
 
 
 
