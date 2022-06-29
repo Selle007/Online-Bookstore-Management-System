@@ -13,6 +13,7 @@ import MyTextInput from "../../../../app/common/form/MyTextInput";
 import MySelectInput from "../../../../app/common/form/MySelectInput";
 import { roleOptions } from "../../../../app/common/options/RoleOptions";
 import { User } from "../../../../app/models/user";
+import DashboardSideBar from "../../DashboardSideBar";
 
 export default observer(function UserForm() {
   const history = useNavigate();
@@ -62,7 +63,7 @@ export default observer(function UserForm() {
   if (loadingInitial) return <LoadingComponent content="Loading user..." />;
   return (
     <>
-      <DashboardNav />
+      <DashboardSideBar />
       <div className={"form"}>
         <Segment clearing style={{ margin: "auto 0" }}>
           <Header content="User Details" sub color="teal"/>

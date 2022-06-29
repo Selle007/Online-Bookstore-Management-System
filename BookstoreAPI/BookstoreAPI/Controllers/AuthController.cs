@@ -37,12 +37,10 @@ namespace BookstoreAPI.Controllers
         }
 
         [HttpPost("register")]
-        public async Task<ActionResult<Users>> Register(UserDto request)
+        public async Task<ActionResult<Users>> Register(RegisterDto request)
         {
             request.password= hashPassword(request.password);
             users.username = request.username;
-            users.name = request.name;
-            users.surname = request.surname;
             users.email = request.email;
             users.password = request.password;
             users.roleName = "User";

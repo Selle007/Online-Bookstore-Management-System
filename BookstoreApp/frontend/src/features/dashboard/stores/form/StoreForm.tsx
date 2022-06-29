@@ -12,6 +12,7 @@ import * as Yup from "yup";
 import MyTextInput from "../../../../app/common/form/MyTextInput";
 import MyTextArea from "../../../../app/common/form/MyTextArea";
 import { Store } from "../../../../app/models/store";
+import DashboardSideBar from "../../DashboardSideBar";
 
 
 export default observer(function StoreForm() {
@@ -59,7 +60,7 @@ export default observer(function StoreForm() {
   if(loadingInitial) return <LoadingComponent content="Loading store..."/>
   return (
     <>
-    <DashboardNav />
+    <DashboardSideBar />
     <div className={'form'}>
     <Segment clearing style={{ margin: "auto 0" }} >
     <Formik

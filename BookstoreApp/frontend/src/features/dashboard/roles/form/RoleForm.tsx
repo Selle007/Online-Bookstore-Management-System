@@ -11,6 +11,7 @@ import { Formik, Form} from "formik";
 import * as Yup from "yup";
 import MyTextInput from "../../../../app/common/form/MyTextInput";
 import { Role } from "../../../../app/models/role";
+import DashboardSideBar from "../../DashboardSideBar";
 
 
 export default observer(function RoleForm() {
@@ -54,7 +55,7 @@ export default observer(function RoleForm() {
   if(loadingInitial) return <LoadingComponent content="Loading role..."/>
   return (
     <>
-    <DashboardNav />
+    <DashboardSideBar />
     <div className={'form'}>
     <Segment clearing style={{ margin: "auto 0" }} >
     <Formik

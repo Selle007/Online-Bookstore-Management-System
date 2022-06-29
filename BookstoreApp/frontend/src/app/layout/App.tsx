@@ -36,7 +36,6 @@ function App() {
   const location = useLocation();
   return (
     <>
-      <Navbar />
       <Container style={{ marginTop: "7em" }}>
         <Routes>
           <Route path="/" element={<HomePage />} />

@@ -11,6 +11,7 @@ import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import MyTextInput from "../../../../app/common/form/MyTextInput";
 import { Supplier } from "../../../../app/models/supplier";
+import DashboardSideBar from "../../DashboardSideBar";
 
 
 export default observer(function SupplierForm() {
@@ -62,7 +63,7 @@ export default observer(function SupplierForm() {
   if (loadingInitial) return <LoadingComponent content="Loading supplier..." />;
   return (
     <>
-      <DashboardNav />
+      <DashboardSideBar />
       <div className={"form"}>
         <Segment clearing style={{ margin: "auto 0" }}>
           <Header content="Supplier Details" sub color="teal" />

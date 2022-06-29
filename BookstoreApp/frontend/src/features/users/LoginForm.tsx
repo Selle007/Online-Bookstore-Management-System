@@ -3,13 +3,14 @@ import { observer } from "mobx-react-lite";
 import React from "react";
 import { Button, Form, Label } from "semantic-ui-react";
 import MyTextInput from "../../app/common/form/MyTextInput";
+import { useStore } from "../../app/stores/store";
+import Navbar from "../components/NavBar";
 import AuthService from "./AuthService";
 
 export default observer(function LoginForm() {
-
-    
-  
   return (
+    <>
+    <Navbar />
     <Formik
       initialValues={{ username: "", password: "" }}
       onSubmit={values => AuthService.login(values)}
@@ -30,5 +31,6 @@ export default observer(function LoginForm() {
         </Form>
       )}
     </Formik>
+    </>
   );
 });

@@ -12,6 +12,7 @@ import * as Yup from "yup";
 import MyTextInput from "../../../../app/common/form/MyTextInput";
 
 import { Stock } from "../../../../app/models/stock";
+import DashboardSideBar from "../../DashboardSideBar";
 
 export default observer(function StockForm() {
   const history = useNavigate();
@@ -55,7 +56,7 @@ export default observer(function StockForm() {
   if (loadingInitial) return <LoadingComponent content="Loading stock..." />;
   return (
     <>
-      <DashboardNav />
+      <DashboardSideBar />
       <div className={"form"}>
         <Segment clearing style={{ margin: "auto 0" }}>
           <Header content="Stock Details" sub color="teal"/>

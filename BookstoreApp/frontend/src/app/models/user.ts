@@ -19,6 +19,5 @@ export interface UserFormValuesRegister {
     surname:string;
     email:string;
     password:string;
-    roleName:string;
 
 }

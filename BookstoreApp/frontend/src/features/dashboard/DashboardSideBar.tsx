@@ -1,52 +1,62 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-import { Menu, Segment, Sidebar } from 'semantic-ui-react'
+import React from "react";
+import { NavLink } from "react-router-dom";
+import {
+  Header,
+  Icon,
+  Image,
+  Label,
+  Menu,
+  Segment,
+  Sidebar,
+} from "semantic-ui-react";
 
-export const DashboardSideBar = () => {
+export default function DashboardSideBar() {
   return (
-    <Sidebar.Pushable as={Segment}>
     <Sidebar
       as={Menu}
-      animation='overlay'
-      icon='labeled'
+      animation="overlay"
+      icon="labeled"
       inverted
       vertical
       visible
-      width='thin'
+      width="thin"
     >
       <Menu.Item header>
-        <img
-          className="logo"
-          src="/images/logo.png"
-          alt="logo"
-          style={{ marginLeft: "25px" }}
-        />
+        <img className="logo" src="/images/logo.png" alt="logo" />
+        <h2>Bookstore</h2>
       </Menu.Item>
-      <Menu.Item
-        as={NavLink}
-        to="/"
-        name="Home"
-        style={{ marginRight: "20px", marginLeft: "20px" }}
-      />
-       <Menu.Item
-        as={NavLink}
-        to="/dashboard/books"
-        name="Books"
-        style={{ marginRight: "20px", marginLeft: "20px" }}
-      />
-      <Menu.Item
-        as={NavLink}
-        to="/dashboard/stores"
-        name="Stores"
-        style={{ marginRight: "20px", marginLeft: "20px" }}
-      />
-      <Menu.Item
-        as={NavLink}
-        to="/dashboard/categories"
-        name="Categories"
-        style={{ marginRight: "20px", marginLeft: "20px" }}
-      />
+      <Menu.Item as={NavLink} to="/" name="Home">
+        <Icon name="home" />
+        Home
+      </Menu.Item>
+      <Menu.Item as={NavLink} to="/dashboard/books" name="Books">
+        <Icon name="book" />
+        Books
+      </Menu.Item>
+      <Menu.Item as={NavLink} to="/dashboard/categories" name="Categories">
+        <Icon name="folder" />
+        Categories
+      </Menu.Item>
+      <Menu.Item as={NavLink} to="/dashboard/suppliers" name="Suppliers">
+        <Icon name="cart" />
+        Suppliers
+      </Menu.Item>
+      <Menu.Item as={NavLink} to="/dashboard/orders" name="Orders">
+        <Icon name="mail outline" />
+        Orders
+      </Menu.Item>
+      <Menu.Item as={NavLink} to="/dashboard/stocks" name="Stocks">
+        <Icon name="boxes" />
+        Stocks
+      </Menu.Item>
+      <Menu.Item as={NavLink} to="/dashboard/users" name="Users">
+        <Icon name="user" />
+        Users
+      </Menu.Item>
+      <Menu.Item as={NavLink} to="/dashboard/roles" name="Roles">
+        <Icon name="code" />
+        Roles
+      </Menu.Item>
     </Sidebar>
-  </Sidebar.Pushable>
-  )
+  );
 }

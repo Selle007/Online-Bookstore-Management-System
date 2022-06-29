@@ -11,6 +11,7 @@ import { Formik, Form} from "formik";
 import * as Yup from "yup";
 import MyTextInput from "../../../../app/common/form/MyTextInput";
 import { Category } from "../../../../app/models/category";
+import DashboardSideBar from "../../DashboardSideBar";
 
 
 export default observer(function CategoryForm() {
@@ -56,7 +57,7 @@ export default observer(function CategoryForm() {
   if(loadingInitial) return <LoadingComponent content="Loading category..."/>
   return (
     <>
-    <DashboardNav />
+    <DashboardSideBar />
     <div className={'form'}>
     <Segment clearing style={{ margin: "auto 0" }} >
     <Formik

@@ -5,6 +5,7 @@ import { Button, Card } from "semantic-ui-react";
 import DashboardNav from "../DashboardNav";
 import LoadingComponent from "../../../app/layout/LoadingComponents";
 import { useStore } from "../../../app/stores/store";
+import DashboardSideBar from "../DashboardSideBar";
 
 export default observer(function UserDetails() {
   const { usersStore } = useStore();
@@ -22,8 +23,9 @@ export default observer(function UserDetails() {
   if (loadingInitial || !user) return <LoadingComponent />;
 
   return (
-    <><DashboardNav />
-    <Card.Group style={{ marginTop: "2.8em" }}>
+    <>
+    <DashboardSideBar />
+    <Card.Group style={{ marginTop: "2.8em", display: "flex", justifyContent: "center"}}>
       <Card fluid>
         <Card.Content>
           <Card.Header>{user.userId }     {user.username}</Card.Header>

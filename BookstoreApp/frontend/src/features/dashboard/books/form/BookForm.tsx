@@ -14,6 +14,7 @@ import MyTextArea from "../../../../app/common/form/MyTextArea";
 import MySelectInput from "../../../../app/common/form/MySelectInput";
 import { categoryOptions } from "../../../../app/common/options/CategoryOptions";
 import { Book } from "../../../../app/models/book";
+import DashboardSideBar from "../../DashboardSideBar";
 
 export default observer(function BookForm() {
   const history = useNavigate();
@@ -64,7 +65,7 @@ export default observer(function BookForm() {
   if (loadingInitial) return <LoadingComponent content="Loading book..." />;
   return (
     <>
-      <DashboardNav />
+      <DashboardSideBar />
       <div className={"form"}>
         <Segment clearing style={{ margin: "auto 0" }}>
           <Header content="Book Details" sub color="teal"/>

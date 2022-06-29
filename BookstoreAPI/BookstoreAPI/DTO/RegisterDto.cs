@@ -4,13 +4,10 @@ namespace BookstoreAPI.DTO
 {
     public class RegisterDto
     {
-        [Required]
-        public string UserName { get; set; }
-        [Required]
+        public string username { get; set; }
         [EmailAddress]
-        public string Email { get; set; }
-        [Required]
-        public string Password { get; set; }
+        public string email { get; set; }
+        public string password { get; set; }
 
     }
 }

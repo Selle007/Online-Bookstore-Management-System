@@ -5,6 +5,7 @@ import { Button, Card } from "semantic-ui-react";
 import DashboardNav from "../DashboardNav";
 import LoadingComponent from "../../../app/layout/LoadingComponents";
 import { useStore } from "../../../app/stores/store";
+import DashboardSideBar from "../DashboardSideBar";
 
 export default observer(function CategoryDetails() {
   const { categoryStore } = useStore();
@@ -22,7 +23,7 @@ export default observer(function CategoryDetails() {
   if (loadingInitial || !category) return <LoadingComponent />;
 
   return (
-    <><DashboardNav />
+    <><DashboardSideBar />
     <Card.Group style={{ marginTop: "2.8em" }}>
       <Card fluid>
         <Card.Content>

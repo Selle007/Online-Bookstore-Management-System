@@ -12,6 +12,7 @@ import * as Yup from "yup";
 import MyTextInput from "../../../../app/common/form/MyTextInput";
 
 import { Order } from "../../../../app/models/order";
+import DashboardSideBar from "../../DashboardSideBar";
 
 export default observer(function OrderForm() {
   const history = useNavigate();
@@ -54,7 +55,7 @@ export default observer(function OrderForm() {
   if (loadingInitial) return <LoadingComponent content="Loading booorderk..." />;
   return (
     <>
-      <DashboardNav />
+      <DashboardSideBar />
       <div className={"form"}>
         <Segment clearing style={{ margin: "auto 0" }}>
           <Header content="Order Details" sub color="teal"/>

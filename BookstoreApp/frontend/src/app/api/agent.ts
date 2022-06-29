@@ -3,11 +3,10 @@ import { Category } from '../models/category';
 import { Store } from '../models/store';
 import { Book } from '../models/book';
 import { Supplier } from "../models/supplier";
-import { User } from '../models/user';
+import { User, UserFormValuesLogin, UserFormValuesRegister } from '../models/user';
 import { Order } from '../models/order';
 import { Stock } from '../models/stock';
 import { Role } from '../models/role';
-import { Token } from 'typescript';
 
 const sleep = (delay: number) => {
     return new Promise((resolve) =>{
@@ -102,6 +101,11 @@ const Roles = {
     delete: (roleId: string) => axios.delete<void>(`/Role/${roleId}`)
 
 }
+const Account = {
+
+    login: (user: UserFormValuesLogin) => requests.post<UserFormValuesLogin>(`/Auth/login`, user),
+    register: (user: UserFormValuesRegister) => requests.post<UserFormValuesRegister>(`/Auth/register`,user),
+}
 
 
 const agent ={
@@ -112,7 +116,8 @@ const agent ={
     Users,
     Roles,
     Orders,
-    Stocks
+    Stocks,
+    Account
 }
 
 export default agent;

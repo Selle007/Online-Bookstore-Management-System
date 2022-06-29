@@ -1,88 +1,87 @@
 // import axios from "axios";
-// import { makeAutoObservable, runInAction } from "mobx";
-// import { tokenToString } from "typescript";
+// import { makeAutoObservable } from "mobx";
+
 // import agent from "../api/agent";
-// import { User} from "../models/user";
+// import {
+//   User,
+//   UserFormValuesLogin,
+//   UserFormValuesRegister,
+// } from "../models/user";
 // import { store } from "./store";
 
+export default class UserStore {
+//   user: User | null = null;
+//   constructor() {
+//     makeAutoObservable(this);
+//   }
 
-export default class UserStore{
-    // user: User | null = null;
+//   getCurrentUser() {
+//     return localStorage.getItem("token");
+//   }
 
-    // constructor() {
-    //     makeAutoObservable(this);
-    // }
+//   register = async (creds: UserFormValuesRegister) => {
+//     try {
+//       return axios
+//         .post("https://localhost:7260/api/Auth/register", creds)
+//         .then((response) => {
+//           if (response.data) {
+//             localStorage.setItem("token", response.data);
+//             let token = localStorage.getItem("token");
+//             console.log(token);
+//             let jwtData = token!.split(".")[1];
+//             let decodedJwtJsonData = window.atob(jwtData);
+//             let decodedJwtData = JSON.parse(decodedJwtJsonData);
+//             let roles = decodedJwtData.role;
+//             localStorage.setItem("role", roles);
+//             console.log(roles);
+//             {
+//               window.location.href = "/login";
+//             }
+//           }
+//           return response.data;
+//         });
+//     } catch (error) {
+//       throw error;
+//     }
+//   };
 
-    // get isLoggedIn(){
-    //     return !!this.user;
-    // }
+//   login = async (creds: UserFormValuesLogin) => {
+//     try {
+//       return axios
+//         .post("https://localhost:7260/api/Auth/login", creds)
+//         .then((response) => {
+//           if (response.data) {
+//             localStorage.setItem("token", response.data);
+//             let token = localStorage.getItem("token");
+//             console.log(token);
+//             let jwtData = token!.split(".")[1];
+//             let decodedJwtJsonData = window.atob(jwtData);
+//             let decodedJwtData = JSON.parse(decodedJwtJsonData);
+//             let roles = decodedJwtData.role;
+//             localStorage.setItem("role", roles);
+//             console.log(roles);
+//             {
+//               window.location.href = "/";
+//             }
+//           }
+//           return response.data;
+//         });
+//     } catch (error) {
+//       throw error;
+//     }
+//   };
 
-    // // login = async (creds: UserFormValues)=> {
-    // //     try {
-    // //         const user = await agent.Account.login(creds);
-    // //         console.log(tokenToString);
-    // //     } catch (error) {
-    // //         throw error;
-    // //     }
-    // // }
+//   isAdmin() {
+//     const role = localStorage.getItem("role");
+//     if (role === "Admin") {
+//       return true;
+//     }
+//   }
 
-    // //  login = (username, password) => {
-    // //     return axios
-    // //       .post(API_URL + "/login", {
-    // //         username,
-    // //         password,
-    // //       })
-    // //       .then((response => response.text()).then(responseFromServer =>{
-    // //         if ( responseFromServer!= "Invalid"){
-    // //           console.log(responseFromServer);
-    // //           if(responseFromServer!=""){
-    // //             localStorage.setItem('token', responseFromServer);
-                
-    // //           }
-    // //           else {
-    // //             alert("Username or password is incorrect!");
-    // //           }
-    // //         }
+//   logout = () => {
+//     localStorage.removeItem("token");
+//     localStorage.removeItem("role");
+//   };
 
-    // //     }))
-    // //     .catch((error) =>{
-    // //       console.log(error);
-    // //     });
-    // //   };
-    //  login = async (creds: UserFormValues)=> {
-    //     try {
-    //         return axios.post('https://localhost:7260/api/Auth/login', creds)
-    //         .then(response => response.text()).then(responseFromServer =>{
-    //                     if ( responseFromServer!= "Invalid"){
-    //                       console.log(responseFromServer);
-    //                       if(responseFromServer!=""){
-    //                         localStorage.setItem('token', responseFromServer);
-                            
-    //                       }
-    //                       else {
-    //                         alert("Username or password is incorrect!");
-    //                       }
-    //                     }
-    //     });
-    //     } catch (error) {
-    //         throw error;
-    //     }
-    // }
-
-    // //  login = (username, password) => {
-    // //     return axios.post('https://localhost:7260/api/Auth/login', {username, password})
-    // //     .then((response)=> {
-    // //         if(response.data.accessToken){
-    // //             localStorage.setItem("user" , JSON.stringify(response.data));
-    // //         }
-    // //         return response.data;
-    // //     });
-    // // };
-
-    // logout=()=> {
-    //     store.commonStore.setToken(null);
-    //     window.localStorage.removeItem('jwt');
-    //     this.user=null;
-
-    // }
+//   token = localStorage.getItem("token");
 }

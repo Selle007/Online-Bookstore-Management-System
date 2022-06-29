@@ -5,6 +5,7 @@ import { observer } from "mobx-react-lite";
 import LoadingComponent from "../../../app/layout/LoadingComponents";
 import DashboardNav from "../DashboardNav";
 import SupplierList from "./SupplierList";
+import DashboardSideBar from "../DashboardSideBar";
 
 
 export default observer( function SupplierDashboard() {
@@ -20,7 +21,7 @@ export default observer( function SupplierDashboard() {
 
   return (
     <>
-    <DashboardNav />
+    <DashboardSideBar />
     <Grid>
       
       <Grid.Column width="15">
