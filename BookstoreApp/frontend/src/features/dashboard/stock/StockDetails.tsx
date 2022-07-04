@@ -28,9 +28,8 @@ export default observer(function StockDetails() {
       <Card fluid>
         <Card.Content>
           <Card.Header>{stock.stockId}</Card.Header>
-          <Card.Description>{stock.bookId}</Card.Description>
-          <Card.Description>{stock.bookname}</Card.Description>
-          <Card.Description>{stock.amount}</Card.Description>
+          <Card.Description>Book ID: {stock.bookId}</Card.Description>
+          <Card.Description>Amount {stock.amount}</Card.Description>
         </Card.Content>
         <Card.Content extra>
           <Button.Group fluid>

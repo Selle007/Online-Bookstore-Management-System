@@ -28,11 +28,11 @@ export default observer(function BookDetails() {
       <Card fluid>
         <Card.Content>
           <Card.Header>{book.isbn }     {book.bookName}</Card.Header>
-          <Card.Description>{book.author}</Card.Description>
-          <Card.Description>{book.bookDescription}</Card.Description>
-          <Card.Description>{book.price}</Card.Description>
-          <Card.Description>{book.image}</Card.Description>
-          <Card.Description>{book.categoryName}</Card.Description>
+          <Card.Description>Author: {book.author}</Card.Description>
+          <Card.Description>Description: {book.bookDescription}</Card.Description>
+          <Card.Description>Price: {book.price}</Card.Description>
+          <Card.Description>Image: {book.bookName}</Card.Description>
+          <Card.Description>Category: {book.categoryName}</Card.Description>
         </Card.Content>
         <Card.Content extra>
           <Button.Group fluid>

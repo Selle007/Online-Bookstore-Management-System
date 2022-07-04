@@ -25,8 +25,10 @@ export default observer(function RefisterFrom() {
     >
       
       {({ handleSubmit, isSubmitting,dirty,isValid  }) => (
-        <Form className="ui form" onSubmit={handleSubmit} autoComplete="off">
+        <Form className="account" onSubmit={handleSubmit} autoComplete="off">
           <MyTextInput name="username" placeholder="Username" />
+          <MyTextInput name="name" placeholder="Name" />
+          <MyTextInput name="surname" placeholder="Surname" />
           <MyTextInput name="email" placeholder="Email" type="email" />
           <MyTextInput name="password" placeholder="Password" type="password" />
           

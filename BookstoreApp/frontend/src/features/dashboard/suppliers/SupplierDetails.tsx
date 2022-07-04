@@ -29,8 +29,8 @@ export default observer(function SupplierDetails() {
       <Card fluid>
         <Card.Content>
           <Card.Header>{supplier.supplierId }     {supplier.supplierName}</Card.Header>
-          <Card.Description>{supplier.supplierAddress}</Card.Description>
-          <Card.Description>{supplier.phone}</Card.Description>
+          <Card.Description>Address: {supplier.supplierAddress}</Card.Description>
+          <Card.Description>Phone: {supplier.phone}</Card.Description>
          
         </Card.Content>
         <Card.Content extra>

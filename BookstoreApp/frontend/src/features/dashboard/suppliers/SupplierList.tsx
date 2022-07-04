@@ -40,10 +40,10 @@ export default observer(function SupplierList() {
                 </Item.Header>
                 <Item.Header as="a">{supplier.supplierName}</Item.Header>
                 <Item.Description>
-                  <div>{supplier.supplierAddress}</div>
+                  <div>Address: {supplier.supplierAddress}</div>
                 </Item.Description>
                 <Item.Description>
-                  <div>{supplier.phone}</div>
+                  <div>Phone: {supplier.phone}</div>
                 </Item.Description>
 
                 <Item.Extra>

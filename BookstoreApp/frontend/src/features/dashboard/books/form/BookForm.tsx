@@ -30,7 +30,6 @@ export default observer(function BookForm() {
     author: "",
     bookDescription: "",
     price: "",
-    image: "",
     categoryName: "",
   });
 
@@ -40,7 +39,6 @@ export default observer(function BookForm() {
     author: Yup.string().required("The Author is required"),
     bookDescription: Yup.string().required("The Book Description is required"),
     price: Yup.string().required("The Price is required"),
-    image: Yup.string().required("The Image is required"),
     categoryName: Yup.string().required("The Category Name is required"),
   });
 
@@ -60,14 +58,24 @@ export default observer(function BookForm() {
     } else {
       updateBook(book).then(() => history(`/dashboard/books/${book.bookId}`));
     }
+
   }
+
+  const [name, setName] = useState(" ");
+  const handleInput = (event: { target: { value: React.SetStateAction<string>; }; }) => {
+    setName(event.target.value);
+  };
+
+  
+
+  
 
   if (loadingInitial) return <LoadingComponent content="Loading book..." />;
   return (
     <>
       <DashboardSideBar />
-      <div className={"form"}>
-        <Segment clearing style={{ margin: "auto 0" }}>
+      <div >
+        <Segment clearing className={"form"}>
           <Header content="Book Details" sub color="teal"/>
           <Formik
             validationSchema={validationSchema}
@@ -91,7 +99,6 @@ export default observer(function BookForm() {
                   placeholder="Book Description"
                 />
                 <MyTextInput name="price" placeholder="Price" />
-                <MyTextInput name="image" placeholder="Image" />
                 <MySelectInput
                   options={categoryOptions}
                   name="categoryName"
@@ -119,4 +126,5 @@ export default observer(function BookForm() {
       </div>
     </>
   );
+  
 });

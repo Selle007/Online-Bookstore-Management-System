@@ -40,7 +40,7 @@ export default observer(function CategoryList() {
                 </Item.Header>
                 <Item.Header as="a">{category.categoryName}</Item.Header>
                 <Item.Description>
-                  <div>{category.categoryDescription}</div>
+                  <div>Description: {category.categoryDescription}</div>
                 </Item.Description>
                 <Item.Extra>
                   <Button

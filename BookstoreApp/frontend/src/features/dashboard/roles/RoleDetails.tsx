@@ -28,7 +28,7 @@ export default observer(function RoleDetails() {
       <Card fluid>
         <Card.Content>
           <Card.Header>{role.roleId}</Card.Header>
-          <Card.Description>{role.roleName}</Card.Description>
+          <Card.Description>Role Name: {role.roleName}</Card.Description>
         </Card.Content>
         <Card.Content extra>
           <Button.Group fluid>

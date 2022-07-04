@@ -2,43 +2,31 @@ Create Database Bookstore
 drop database Bookstore
 use Bookstore
 
-create table Book (
-bookId int NOT NULL IDENTITY(1,1) PRIMARY KEY,
-isbn int not null,
-bookName varchar (30) not null,
-author varchar (30) not null,
-bookDescription varchar (200) not null,
-price int not null,
-image varchar(30)not null,
-categoryName varchar(50) Foreign Key references Category(categoryName)
-
-);
-drop table Book
-
-
-
-create table Category (
-categoryId int NOT NULL IDENTITY(1,1) ,
-categoryName varchar(50) not null PRIMARY KEY,
-categoryDescription varchar(200) not null,
-);
-drop table Category
-
-create table Store (
-storeId int NOT NULL IDENTITY(1,1) PRIMARY KEY,
-storeName varchar(30) not null,
-address varchar(30) not null
-);
+	  SET IDENTITY_INSERT Users ON
+	  	  SET IDENTITY_INSERT Role ON
+		  	  SET IDENTITY_INSERT [AspNetUsers] ON
 
 create table Users(
-userID int NOT NULL IDENTITY(1,1) PRIMARY KEY,
+userId int NOT NULL IDENTITY(1,1) PRIMARY KEY,
+username varchar(30) not null ,
 name varchar(30) not null,
 surname varchar(30) not null,
-email varchar(30) not null,
-username varchar(30) not null,
-password varchar(30) not null,
-role varchar(30) not null
+email varchar(30) null,
+password varchar(200) not null,
+refreshToken varchar(30) not null,
+tokenCreated datetime2 not null,
+tokenExpires datetime2 not null,
+roleName varchar(30) not null foreign key references Role(roleName)
 );
+drop table Users
+
+
+create table Role(
+roleId int not null identity(1,1),
+roleName varchar(30) not null primary key
+);
+drop table Role
+
 
 create table Staff(
 staffId int not null foreign key references Users(userID),
@@ -49,18 +37,78 @@ shift_end time not null,
 storeId int foreign key references Store(storeId)
 );
 
+create table Book(
+bookId int NOT NULL IDENTITY(1,1)PRIMARY KEY,
+isbn int not null,
+bookName varchar (900) not null,
+author varchar (max),
+bookDescription varchar (max),
+price int,
+categoryName varchar(50) Foreign Key references Category(categoryName)
+);
+drop table Book
+
+insert into Book values (123456,'48 Laws Of Power','Robert Greene','A self-help book offering advice on how to gain and maintain power, using lessons drawn from parables and the experiences of historical figures.',23,'Psychology');
+insert into Book values (123456,'Think And Grow Rich','Napoleon Hill','Representing the distilled wisdom of distinguished men of great wealth and achievement.',13,'Finance');
+insert into Book values (123456,'The Art Of War','Sun Tzu','Ancient Chinese military treatise dating from the Late Spring and Autumn Period. Containing a detailed explanation and analysis of the 5th-century Chinese military, from weapons and strategy to rank and discipline.',15,'Philosophy');
+insert into Book values (123456,'No Longer Human','The poignant and fascinating story of a young man who is caught between the breakup of the traditions of a northern Japanese aristocratic family and the impact of Western ideas','Lorem',22,'Psychology');
+insert into Book values (123456,'Atomic Habits','James Clear','The most comprehensive and practical guide on how to create good habits, break bad ones, and get 1 percent better every day.',20,'Psychology');
+insert into Book values (123456,'Ikigai','Francesc Miralles and Hector Garcia','Ikigai reveals the secrets to their longevity and happiness: how they eat, how they move, how they work,how they foster collaboration.',14,'Psychology');
+insert into Book values (123456,'Call Us What We Carry','Amanda Gorman','Formerly titled The Hill We Climb and Other Poems.It captures a shipwrecked moment in time and transforms it into a lyric of hope and healing.',15,'Psychology');
+insert into Book values (123456,'Game On','Janet Evanovich','Stephanie Plum returns to hunt down a new kind of criminal operating',15,'Psychology');
+
+
+create table BookImages (
+imageName varchar(900) not null primary key,
+imageUrl varchar(900) not null,
+bookId int foreign key references Book(bookId)
+)
+
+select * from BookImages
+
+drop table BookImages
+
+
+create table Category (
+categoryId int NOT NULL IDENTITY(1,1) ,
+categoryName varchar(50) not null PRIMARY KEY,
+categoryDescription varchar(200) not null,
+);
+drop table Category
+
+insert into Category values ('Fiction','Fiction');
+insert into Category values ('Romance','Romance');
+insert into Category values ('Action','Action');
+insert into Category values ('Childrens','Childrens');
+insert into Category values ('Drama','Drama');
+insert into Category values ('Fantasy','Fantasy');
+insert into Category values ('Horror','Horror');
+insert into Category values ('Philosophy','Philosophy');
+insert into Category values ('Science','Science');
+insert into Category values ('Travel','Travel');
+insert into Category values ('Western','Western');
+insert into Category values ('Science fiction','Science fiction');
+insert into Category values ('Thriller','Thriller');
+insert into Category values ('Finance','Finance');
+insert into Category values ('Psychology','Psychology');
+
+create table Store (
+storeId int NOT NULL IDENTITY(1,1) PRIMARY KEY,
+storeName varchar(30) not null,
+address varchar(30) not null
+);
 
 create table Stock(
-bookname varchar(30) not null,
-getBookStock int not null,
+stockId int not null primary key IDENTITY(1,1),
+amount int not null,
 bookId int not null foreign key references Book(bookId)
 );
 drop table Stock
 
 create table Orders(
-orderId int not null primary key,
+orderId int not null primary key IDENTITY(1,1),
 bookId int not null foreign key references Book(bookId),
-staffId int not null foreign key references Users(userID)
+userId int NOT NULL FOREIGN KEY REFERENCES Users(userId) ON DELETE CASCADE
 );
 drop table Orders
 
@@ -69,9 +117,91 @@ supplierId int IDENTITY(1,1) not null primary key,
 supplierName varchar(30) not null,
 supplierAddress varchar(30) not null,
 phone varchar(30)
-
 );
-drop table Supplier
+
+
+create table Review(
+reviewId int not null IDENTITY(1,1),
+email varchar(max) not null,
+reviewText varchar(max) not null
+);
+
+drop table Review
+
+CREATE TABLE [AspNetRoles] (
+          [Id] nvarchar(450) NOT NULL,
+          [Name] nvarchar(256) NOT NULL,
+          [NormalizedName] nvarchar(256) NULL,
+          [ConcurrencyStamp] nvarchar(max) NULL,
+          CONSTRAINT [PK_AspNetRoles] PRIMARY KEY ([Name])
+      );
+
+      CREATE TABLE [AspNetUsers] (
+          [Id] nvarchar(450) NOT NULL,
+          [UserName] nvarchar(256) NOT NULL,
+          [NormalizedUserName] nvarchar(256) NULL,
+          [Email] nvarchar(256) NULL,
+          [NormalizedEmail] nvarchar(256) NULL,
+          [EmailConfirmed] bit NOT NULL,
+          [PasswordHash] nvarchar(max) NULL,
+          [SecurityStamp] nvarchar(max) NULL,
+          [ConcurrencyStamp] nvarchar(max) NULL,
+          [PhoneNumber] nvarchar(max) NULL,
+          [PhoneNumberConfirmed] bit NOT NULL,
+          [TwoFactorEnabled] bit NOT NULL,
+          [LockoutEnd] datetimeoffset NULL,
+          [LockoutEnabled] bit NOT NULL,
+          [AccessFailedCount] int NOT NULL,
+          [Name] nvarchar(256) NOT NULL default 'User',
+          CONSTRAINT [PK_AspNetUsers] PRIMARY KEY ([UserName]),
+          CONSTRAINT [FK_AspNetRoles_Name] FOREIGN KEY ([Name]) REFERENCES [AspNetRoles] ([Name])  ON DELETE CASCADE
+      );
+
+	  SET IDENTITY_INSERT [AspNetUsers] ON
+
+      CREATE TABLE [AspNetRoleClaims] (
+          [Id] int NOT NULL IDENTITY,
+          [Name] nvarchar(256) NOT NULL,
+          [ClaimType] nvarchar(max) NULL,
+          [ClaimValue] nvarchar(max) NULL,
+          CONSTRAINT [PK_AspNetRoleClaims] PRIMARY KEY ([Id]),
+          CONSTRAINT [FK_AspNetRoleClaims_AspNetRoles_Name] FOREIGN KEY ([Name]) REFERENCES [AspNetRoles] ([Name]) ON DELETE CASCADE
+      );
+
+      CREATE TABLE [AspNetUserClaims] (
+          [Id] int NOT NULL IDENTITY,
+          [UserName] nvarchar(256) NOT NULL,
+          [ClaimType] nvarchar(max) NULL,
+          [ClaimValue] nvarchar(max) NULL,
+          CONSTRAINT [PK_AspNetUserClaims] PRIMARY KEY ([Id]),
+          CONSTRAINT [FK_AspNetUserClaims_AspNetUsers_UserName] FOREIGN KEY ([UserName]) REFERENCES [AspNetUsers] ([UserName]) ON DELETE CASCADE
+      );
+
+      CREATE TABLE [AspNetUserLogins] (
+          [LoginProvider] nvarchar(450) NOT NULL,
+          [ProviderKey] nvarchar(450) NOT NULL,
+          [ProviderDisplayName] nvarchar(max) NULL,
+          [UserName] nvarchar(256) NOT NULL,
+          CONSTRAINT [PK_AspNetUserLogins] PRIMARY KEY ([LoginProvider], [ProviderKey]),
+          CONSTRAINT [FK_AspNetUserLogins_AspNetUsers_UserName] FOREIGN KEY ([UserName]) REFERENCES Users (Username) ON DELETE CASCADE
+      );
+
+      CREATE TABLE [AspNetUserTokens] (
+          [UserName] nvarchar(256) NOT NULL,
+          [LoginProvider] nvarchar(450) NOT NULL,
+          [Name] nvarchar(450) NOT NULL,
+          [Value] nvarchar(max) NULL,
+          CONSTRAINT [PK_AspNetUserTokens] PRIMARY KEY ([UserName], [LoginProvider], [Name]),
+          CONSTRAINT [FK_AspNetUserTokens_AspNetUsers_UserName] FOREIGN KEY ([UserName]) REFERENCES [AspNetUsers] ([UserName]) ON DELETE CASCADE
+      );
+
+
+	  drop table AspNetRoles
+	  drop table AspNetUsers
+	  drop table AspNetUserClaims
+	  drop table AspNetUserLogins
+	  drop table AspNetRoleClaims
+	  drop table AspNetUserTokens
 
 insert into Supplier values ('Supplier1','SupplierAddress1','123456789');
 insert into Supplier values ('Supplier2','SupplierAddress2','123456789');
@@ -92,8 +222,12 @@ end
 
 exec getBookStock 123
 
+select * from Book
 
-insert into Book values (1000,'Book0','Author0','Lorem Ipsum Dolor',15,'image1.png','TestCategory0');
+insert into Book values (1000222,'Think And Grow Rich','Author0','Lorem Ipsum Dolor',15,
+'Think And Grow Rich.jpg','TestCategory2');
+
+
 insert into Book values (1001,'Book1','Author1','Lorem Ipsum Dolor',15,'image1.png','TestCategory0');
 insert into Book values (1002,'Book2','Author2','Lorem Ipsum Dolor',15,'image1.png','TestCategory0');
 insert into Book values (1003,'Book3','Author3','Lorem Ipsum Dolor',15,'image1.png','TestCategory0');
@@ -111,7 +245,12 @@ insert into Category values ('TestCategory4','Lorem Ipsum Dolor');
 insert into Category values ('TestCategory5','Lorem Ipsum Dolor');
 insert into Category values ('TestCategory6','Lorem Ipsum Dolor');
 
-insert into Store values ()
+insert into Users values ('Memo','Selmin','Lekovic','Selmin@gmail.com','Memo1234',1);
+insert into Users values ('Lynx','Ereza','Loshi','Ereza@gmail.com','Lynx1234',1);
+insert into Users values ('Rainz','Dion','Osmani','Dion@gmail.com','Rainz1234',1);
+
+insert into Role values ('Admin')
+insert into Role values ('User')
 
 INSERT INTO Store VALUES ('InfoPeja','Rr. Eliot Engel, Peja');
 INSERT INTO Store VALUES ('Buton KS','Rr. Elez Berisha, Prishtina ');
@@ -134,6 +273,9 @@ INSERT INTO Adresa VALUES (7, , 'Prishtina', 10000,7);
 INSERT INTO Adresa VALUES (8, , 'Gjakova', 50000,8);
 INSERT INTO Adresa VALUES (9, , 'Gjilan', 60000,9);
 INSERT INTO Adresa VALUES (10, , 'Prishtina', 10000,10);
+
+
+
 (LocalDB)\Bookstore
 
 

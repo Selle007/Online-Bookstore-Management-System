@@ -61,8 +61,8 @@ export default observer(function StoreForm() {
   return (
     <>
     <DashboardSideBar />
-    <div className={'form'}>
-    <Segment clearing style={{ margin: "auto 0" }} >
+    <div>
+    <Segment clearing className={'form'}>
     <Formik
             validationSchema={validationSchema}
             enableReinitialize

@@ -5,6 +5,5 @@ export interface Book{
     author: string;
     bookDescription: string;
     price: string;
-    image: string;
     categoryName: string;
 }

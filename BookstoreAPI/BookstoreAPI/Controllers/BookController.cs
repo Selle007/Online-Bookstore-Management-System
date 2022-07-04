@@ -10,10 +10,14 @@ namespace BookstoreAPI.Controllers
     [ApiController]
     public class BookController : ControllerBase
     {
-        private DataContext _context;
+        
 
-        public BookController(DataContext context)
+        public static IWebHostEnvironment _environment;
+        private DataContext _context;
+  
+        public BookController(IWebHostEnvironment environment, DataContext context)
         {
+            _environment = environment;
             _context = context;
         }
 
@@ -32,6 +36,8 @@ namespace BookstoreAPI.Controllers
             return Ok(book);
         }
 
+
+        
         [HttpPost]
         public async Task<ActionResult<List<Book>>> CreateBook(Book book)
         {
@@ -39,6 +45,8 @@ namespace BookstoreAPI.Controllers
             await _context.SaveChangesAsync();
 
             return Ok(await _context.Book.ToListAsync());
+
+
         }
 
         [HttpPut("{id}")]
@@ -53,7 +61,6 @@ namespace BookstoreAPI.Controllers
             dbBook.author = request.author;
             dbBook.bookDescription = request.bookDescription;
             dbBook.price = request.price;
-            dbBook.image = request.image;
             dbBook.categoryName = request.categoryName;
 
 
@@ -74,6 +81,43 @@ namespace BookstoreAPI.Controllers
             await _context.SaveChangesAsync();
 
             return Ok(await _context.Book.ToListAsync());
+        }
+
+        private async Task<string> ImageUpload()
+        {
+            try
+            {
+                var files = HttpContext.Request.Form.Files;
+                if (files != null && files.Count > 0)
+                {
+                    foreach (var file in files)
+                    {
+                        var path = Path.Combine("", _environment.ContentRootPath + "\\Images\\" + file.FileName);
+                        using (var stream = new FileStream(path, FileMode.Create))
+                        {
+                            file.CopyTo(stream);
+
+
+                        }
+                        var url = "/images/books/" + file.FileName;
+                        BookImages bookImage = new BookImages();
+                        bookImage.imageName = file.FileName;
+                        bookImage.imageUrl = url;
+                        _context.BookImages.Add(bookImage);
+                        _context.SaveChanges();
+
+                    }
+                    return "Saved Succesfully";
+                }
+                else
+                {
+                    return "Failed!";
+                }
+            }
+            catch (Exception ex)
+            {
+                return ex.Message.ToString();
+            }
         }
     }
 }

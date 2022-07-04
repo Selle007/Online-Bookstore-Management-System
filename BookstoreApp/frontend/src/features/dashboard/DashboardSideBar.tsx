@@ -12,6 +12,8 @@ import {
 
 export default function DashboardSideBar() {
   return (
+    <>
+    <Menu fixed="top" inverted />
     <Sidebar
       as={Menu}
       animation="overlay"
@@ -22,8 +24,8 @@ export default function DashboardSideBar() {
       width="thin"
     >
       <Menu.Item header>
-        <img className="logo" src="/images/logo.png" alt="logo" />
-        <h2>Bookstore</h2>
+        <img className="logo" src="/images/logoText.png" alt="logo" />
+        
       </Menu.Item>
       <Menu.Item as={NavLink} to="/" name="Home">
         <Icon name="home" />
@@ -57,6 +59,12 @@ export default function DashboardSideBar() {
         <Icon name="code" />
         Roles
       </Menu.Item>
+      <Menu.Item as={NavLink} to="/dashboard/reviews" name="Reviews">
+        <Icon name="star outline" />
+        Reviews
+      </Menu.Item>
     </Sidebar>
+    </>
+    
   );
 }

@@ -64,8 +64,8 @@ export default observer(function SupplierForm() {
   return (
     <>
       <DashboardSideBar />
-      <div className={"form"}>
-        <Segment clearing style={{ margin: "auto 0" }}>
+      <div>
+        <Segment clearing className={"form"}>
           <Header content="Supplier Details" sub color="teal" />
           <Formik
             validationSchema={validationSchema}

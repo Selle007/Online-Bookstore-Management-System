@@ -48,7 +48,6 @@ namespace BookstoreAPI.Controllers
             if (dbStock == null)
                 return BadRequest("Stock not found.");
 
-            dbStock.bookname = request.bookname;
             dbStock.amount = request.amount;
             dbStock.bookId = request.bookId;
 

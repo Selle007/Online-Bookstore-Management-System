@@ -31,15 +31,22 @@ import RoleDashboard from "../../features/dashboard/roles/RoleDashboard";
 import RoleDetails from "../../features/dashboard/roles/RoleDetails";
 import RoleForm from "../../features/dashboard/roles/form/RoleForm";
 import RegisterForm from "../../features/users/RegisterForm";
+import AccountPage from "../../features/account/AccountPage";
+import ReviewDashboard from "../../features/dashboard/reviews/ReviewDashboard";
+import ReviewDetails from "../../features/dashboard/reviews/ReviewDetails";
+import ReviewForm from "../../features/dashboard/reviews/form/ReviewForm";
+
 
 function App() {
   const location = useLocation();
   return (
     <>
-      <Container style={{ marginTop: "7em" }}>
+      <Container style={{ marginTop: "6em" }}>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/account" element={<AccountPage />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          {/* <Route path="/update-account" element={<AccountForm />} /> */}
           <Route path="/dashboard/categories" element={<CategoryDashboard />} />
           <Route
             path="/dashboard/categories/:categoryId"
@@ -148,6 +155,19 @@ function App() {
             key={location.key}
             path="/dashboard/manage/roles/:roleId"
             element={<RoleForm />}
+          />
+          
+          <Route path="/dashboard/reviews" element={<ReviewDashboard />} />
+          <Route path="/dashboard/reviews/:reviewId" element={<ReviewDetails />} />
+          <Route
+            key={location.key}
+            path="/dashboard/reviews/createReview"
+            element={<ReviewForm />}
+          />
+          <Route
+            key={location.key}
+            path="/dashboard/manage/reviews/:reviewId"
+            element={<ReviewForm />}
           />
 
           <Route path="/login" element={<LoginForm />} />

@@ -22,7 +22,19 @@ class AuthService {
             let decodedJwtJsonData = window.atob(jwtData);
             let decodedJwtData = JSON.parse(decodedJwtJsonData);
             let roles = decodedJwtData.role;
+            let userId = decodedJwtData.userId;
+            let name = decodedJwtData.name;
+            let surname = decodedJwtData.surname;
+            let username = decodedJwtData.username;
+            let email = decodedJwtData.email;
+            
+            localStorage.setItem("userId", userId );
             localStorage.setItem("role", roles);
+            localStorage.setItem("name", name);
+            localStorage.setItem("surname", surname);
+            localStorage.setItem("username", username);
+            localStorage.setItem("email", email);
+
             console.log(roles);
             {
               window.location.href = "/";
@@ -37,8 +49,13 @@ class AuthService {
 
   logout() {
     localStorage.removeItem("token");
+    localStorage.removeItem("userId");
     localStorage.removeItem("role");
-  }
+    localStorage.removeItem("name");
+    localStorage.removeItem("surname");
+    localStorage.removeItem("username");
+    localStorage.removeItem("email");
+}
 
   register = async (creds: UserFormValuesRegister) => {
     try {
@@ -53,7 +70,18 @@ class AuthService {
             let decodedJwtJsonData = window.atob(jwtData);
             let decodedJwtData = JSON.parse(decodedJwtJsonData);
             let roles = decodedJwtData.role;
+            let userId = decodedJwtData.userId;
+            let name = decodedJwtData.name;
+            let surname = decodedJwtData.surname;
+            let username = decodedJwtData.username;
+            let email = decodedJwtData.email;
+            
+            localStorage.setItem("userId", userId );
             localStorage.setItem("role", roles);
+            localStorage.setItem("name", name);
+            localStorage.setItem("surname", surname);
+            localStorage.setItem("username", username);
+            localStorage.setItem("email", email);
             console.log(roles);
             {
               window.location.href = "/login";

@@ -39,10 +39,10 @@ export default observer(function OrderList() {
                   {order.orderId}
                 </Item.Header>
                 <Item.Description>
-                  <div>{order.bookId}</div>
+                  <div>Ordered book: {order.bookId}</div>
                 </Item.Description>
                 <Item.Description>
-                  <div>{order.userId}</div>
+                  <div>User: {order.userId}</div>
                 </Item.Description>
 
                 <Item.Extra>

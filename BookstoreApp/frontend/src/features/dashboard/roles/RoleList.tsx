@@ -39,7 +39,7 @@ export default observer(function RoleList() {
                   {role.roleId}
                 </Item.Header>
                 <Item.Description>
-                  <div>{role.roleName}</div>
+                  <div>Role Name: {role.roleName}</div>
                 </Item.Description>
                 <Item.Extra>
                   <Button

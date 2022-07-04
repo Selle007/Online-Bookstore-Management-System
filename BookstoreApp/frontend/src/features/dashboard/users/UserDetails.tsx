@@ -29,11 +29,11 @@ export default observer(function UserDetails() {
       <Card fluid>
         <Card.Content>
           <Card.Header>{user.userId }     {user.username}</Card.Header>
-          <Card.Description>{user.name}</Card.Description>
-          <Card.Description>{user.surname}</Card.Description>
-          <Card.Description>{user.email}</Card.Description>
-          <Card.Description>{user.password}</Card.Description>
-          <Card.Description>{user.roleName}</Card.Description>
+          <Card.Description>Name: {user.name}</Card.Description>
+          <Card.Description>Surname: {user.surname}</Card.Description>
+          <Card.Description>Email: {user.email}</Card.Description>
+          <Card.Description>Hashed Password: {user.password}</Card.Description>
+          <Card.Description>Role: {user.roleName}</Card.Description>
         </Card.Content>
         <Card.Content extra>
           <Button.Group fluid>

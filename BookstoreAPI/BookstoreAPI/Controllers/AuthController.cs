@@ -41,6 +41,8 @@ namespace BookstoreAPI.Controllers
         {
             request.password= hashPassword(request.password);
             users.username = request.username;
+            users.name = request.name;
+            users.surname = request.surname;
             users.email = request.email;
             users.password = request.password;
             users.roleName = "User";
@@ -128,10 +130,20 @@ namespace BookstoreAPI.Controllers
         {
             List<Claim> claims = new List<Claim>
             {
+                new Claim("userId", users.userId.ToString()),
+                new Claim(ClaimTypes.SerialNumber, users.userId.ToString()),
                 new Claim("username", users.username),
-                new Claim(ClaimTypes.Name, users.username),
+                new Claim(ClaimTypes.GivenName, users.username),
+                new Claim("name", users.name),
+                new Claim(ClaimTypes.Name, users.name),
+                new Claim("surname", users.surname),
+                new Claim(ClaimTypes.Surname, users.surname),
                 new Claim("role", users.roleName),
-                new Claim(ClaimTypes.Role, users.roleName)
+                new Claim(ClaimTypes.Role, users.roleName),
+                new Claim("email", users.email),
+                new Claim(ClaimTypes.Email, users.email)
+
+
             };
 
             var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(

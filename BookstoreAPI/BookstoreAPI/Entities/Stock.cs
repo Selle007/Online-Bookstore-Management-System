@@ -7,7 +7,6 @@ namespace BookstoreAPI.Entities
     {
         [Key]
         public int stockId { get; set; }
-        public string bookname { get; set; }
         public int amount { get; set; }
         [ForeignKey("Book")]
         public int bookId { get; set; }

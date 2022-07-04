@@ -7,6 +7,7 @@ import { User, UserFormValuesLogin, UserFormValuesRegister } from '../models/use
 import { Order } from '../models/order';
 import { Stock } from '../models/stock';
 import { Role } from '../models/role';
+import { Review } from '../models/review';
 
 const sleep = (delay: number) => {
     return new Promise((resolve) =>{
@@ -101,6 +102,15 @@ const Roles = {
     delete: (roleId: string) => axios.delete<void>(`/Role/${roleId}`)
 
 }
+
+const Reviews = {
+    list: () => requests.get<Review[]>('/Reviews'),
+    details: (reviewId: string) => requests.get<Review>(`/Reviews/${reviewId}`),
+    create: (review: Review) => requests.post<void>(`/Reviews`, review),
+    update: (review: Review) => axios.put<void>(`/Reviews/${review.reviewId}`, review),
+    delete: (reviewId: string) => axios.delete<void>(`/Reviews/${reviewId}`)
+
+}
 const Account = {
 
     login: (user: UserFormValuesLogin) => requests.post<UserFormValuesLogin>(`/Auth/login`, user),
@@ -117,7 +127,8 @@ const agent ={
     Roles,
     Orders,
     Stocks,
-    Account
+    Account,
+    Reviews
 }
 
 export default agent;

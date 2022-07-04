@@ -42,19 +42,19 @@ export default observer(function UserList() {
                   {user.username}
                 </Item.Header>
                 <Item.Description>
-                  <div>{user.name}</div>
+                  <div>Name: {user.name}</div>
                 </Item.Description>
                 <Item.Description>
-                  <div>{user.surname}</div>
+                  <div>Surname: {user.surname}</div>
                 </Item.Description>
                 <Item.Description>
-                  <div>{user.email}</div>
+                  <div>Email: {user.email}</div>
                 </Item.Description>
                 <Item.Description>
-                  <div>{user.password}</div>
+                  <div>Hashed Password: {user.password}</div>
                 </Item.Description>
                 <Item.Description>
-                  <div>{user.roleName}</div>
+                  <div>Role: {user.roleName}</div>
                 </Item.Description>
           
 

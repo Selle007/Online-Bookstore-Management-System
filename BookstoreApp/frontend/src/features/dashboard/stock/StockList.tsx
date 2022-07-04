@@ -39,13 +39,10 @@ export default observer(function StockList() {
                   {stock.stockId}
                 </Item.Header>
                 <Item.Description>
-                  <div>{stock.bookId}</div>
+                  <div>Book ID: {stock.bookId}</div>
                 </Item.Description>
                 <Item.Description>
-                  <div>{stock.bookname}</div>
-                </Item.Description>
-                <Item.Description>
-                  <div>{stock.amount}</div>
+                  <div>Amount: {stock.amount}</div>
                 </Item.Description>
 
                 <Item.Extra>

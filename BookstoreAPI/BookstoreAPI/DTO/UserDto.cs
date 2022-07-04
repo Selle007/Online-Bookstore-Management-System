@@ -14,5 +14,6 @@ namespace BookstoreAPI.DTO
         public string email { get; set; } = string.Empty;
         public string password { get; set; }
         public string roleName { get; set; } = "User";
+        public string image { get; set; }
     }
 }

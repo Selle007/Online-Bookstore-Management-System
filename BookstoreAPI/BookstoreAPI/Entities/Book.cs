@@ -12,9 +12,9 @@ namespace BookstoreAPI.Entities
         public string author{ get; set; }
         public string bookDescription { get; set; }
         public int price { get; set; }
-        public string image { get; set; }
         [ForeignKey("Category")]
         public string categoryName { get; set; }
+
 
 
     }

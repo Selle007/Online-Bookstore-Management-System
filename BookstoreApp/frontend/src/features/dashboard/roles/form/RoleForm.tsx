@@ -56,8 +56,8 @@ export default observer(function RoleForm() {
   return (
     <>
     <DashboardSideBar />
-    <div className={'form'}>
-    <Segment clearing style={{ margin: "auto 0" }} >
+    <div>
+    <Segment clearing className={"form"}>
     <Formik
             validationSchema={validationSchema}
             enableReinitialize

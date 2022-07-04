@@ -23,7 +23,6 @@ export default observer(function StockForm() {
 
   const [stock, setStock] = useState({
     stockId: "",
-    bookname: "",
     amount: "",
     bookId: "",
    
@@ -31,7 +30,6 @@ export default observer(function StockForm() {
 
   const validationSchema = Yup.object({
     bookId: Yup.string().required("The Book Id  is required"),
-    UserName: Yup.string().required("The User Name is required"),
 
   });
 
@@ -57,8 +55,8 @@ export default observer(function StockForm() {
   return (
     <>
       <DashboardSideBar />
-      <div className={"form"}>
-        <Segment clearing style={{ margin: "auto 0" }}>
+      <div>
+        <Segment clearing  className={"form"}>
           <Header content="Stock Details" sub color="teal"/>
           <Formik
             validationSchema={validationSchema}
@@ -73,7 +71,6 @@ export default observer(function StockForm() {
                 autoComplete="off"
               >
                 <MyTextInput name="bookId" placeholder="Book Id" />
-                <MyTextInput name="bookname" placeholder="Book Name" />
                 <MyTextInput name="amount" placeholder="Amount" />
                 <Button
                 disabled={isSubmitting || !dirty || !isValid}

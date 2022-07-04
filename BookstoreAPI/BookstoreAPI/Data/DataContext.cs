@@ -20,6 +20,10 @@ namespace WebAPI.Data
         public DbSet<Stock> Stock { get; set; }
         public DbSet<Users> Users { get; set; }
         public DbSet<Role> Role { get; set; }
+        public DbSet<BookImages> BookImages { get; set; }
+        public DbSet<Review> Review { get; set; }
+
+
 
 
     }

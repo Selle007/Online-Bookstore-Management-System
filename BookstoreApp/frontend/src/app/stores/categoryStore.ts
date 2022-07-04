@@ -18,6 +18,10 @@ export default class CategoryStore {
       (a, b) => parseInt(a.categoryId) - parseInt(b.categoryId)
     );
   }
+
+  get categoryOptions() {
+    return Array.from(this.categoryRegistry.values())
+  }
   loadCategories = async () => {
     this.loadingInitial = true;
     try {

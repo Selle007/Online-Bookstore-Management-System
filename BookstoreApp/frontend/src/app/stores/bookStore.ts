@@ -53,12 +53,20 @@ export default class BookStore {
     }
   };
 
+
+
   private setBook = (book: Book) => {
     this.bookRegistry.set(book.bookId, book);
   };
 
   private getBook = (bookId: string) => {
     return this.bookRegistry.get(bookId);
+  };
+
+  private getImage = (image: string) => {
+    console.log(image);
+    return this.bookRegistry.get(image);
+    
   };
 
   setLoadingInitial = (state: boolean) => {

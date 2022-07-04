@@ -43,19 +43,23 @@ export default observer(function BookList() {
                 </Item.Header>
                 <Item.Header as="a">{book.bookName}</Item.Header>
                 <Item.Description>
-                  <div>{book.author}</div>
+                  <div>Author: {book.author}</div>
                 </Item.Description>
                 <Item.Description>
-                  <div>{book.bookDescription}</div>
+                  <div>Description: {book.bookDescription}</div>
                 </Item.Description>
                 <Item.Description>
-                  <div>{book.price}</div>
+                  <div>Price: {book.price}</div>
                 </Item.Description>
+                
                 <Item.Description>
-                  <div>{book.image}</div>
+                  <div>Category: {book.categoryName}</div>
                 </Item.Description>
-                <Item.Description>
-                  <div>{book.categoryName}</div>
+                <Item.Description className="image"floated="right">
+                  <div>
+                    <img src={`/images/books/${book.bookName}.jpg`||`/images/books/${book.bookName}.png`} alt="book cover"/>
+                  </div>
+                  
                 </Item.Description>
 
                 <Item.Extra>

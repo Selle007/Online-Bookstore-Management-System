@@ -28,7 +28,7 @@ export default observer(function CategoryDetails() {
       <Card fluid>
         <Card.Content>
           <Card.Header>{category.categoryName}</Card.Header>
-          <Card.Description>{category.categoryDescription}</Card.Description>
+          <Card.Description>Description: {category.categoryDescription}</Card.Description>
         </Card.Content>
         <Card.Content extra>
           <Button.Group fluid>
