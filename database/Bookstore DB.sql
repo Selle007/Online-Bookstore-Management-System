@@ -19,7 +19,7 @@ tokenExpires datetime2 not null,
 roleName varchar(30) not null foreign key references Role(roleName)
 );
 drop table Users
-
+select * from Users
 
 create table Role(
 roleId int not null identity(1,1),
@@ -127,6 +127,86 @@ reviewText varchar(max) not null
 );
 
 drop table Review
+
+create table Novel(
+novelId int NOT NULL IDENTITY(1,1)PRIMARY KEY,
+novelName varchar (900) not null,
+novelist varchar (max),
+price int
+);
+drop table Novel
+
+insert into Novel Values('Anna Karenina',' Leo Tolstoy',15)
+insert into Novel Values('To Kill a Mockingbird','Harper Lee',25)
+insert into Novel Values('The Great Gatsby','The Great Gatsby',15)
+insert into Novel Values('One Hundred Years of Solitude','Gabriel García Márquez',15)
+insert into Novel Values('A Passage to India','E.M. Forster',25)
+insert into Novel Values('Invisible Man','Ralph Ellison',15)
+insert into Novel Values('Don Quixote','Miguel de Cervantes',15)
+insert into Novel Values('Beloved','Toni Morrison',25)
+insert into Novel Values('Toni Morrison','Virginia Woolf',15)
+insert into Novel Values('Jane Eyre','Charlotte Brontë',25)
+
+select * from Novel
+
+create table Blog(
+blogId int NOT NULL IDENTITY(1,1)PRIMARY KEY,
+blogTitle varchar (max),
+blogContent varchar (max),
+published varchar(max),
+);
+drop table Blog
+
+create table AudioBook(
+audioBookId int NOT NULL IDENTITY(1,1)PRIMARY KEY,
+audioBookName varchar (max),
+length varchar (max),
+price int
+);
+
+
+drop table AudioBook
+
+insert into AudioBook values ('48 Laws Of Power',123, 23);
+insert into AudioBook values ('Think And Grow Rich',123,13);
+insert into AudioBook values ('The Art Of War',123,15);
+insert into AudioBook values ('No Longer Human',123,22);
+insert into AudioBook values ('Atomic Habits',123,20);
+insert into AudioBook values ('Ikigai',123,14);
+insert into AudioBook values ('Call Us What We Carry',123,15);
+insert into AudioBook values ('Game On',123,15);
+
+
+create table Sale(
+saleId int not null IDENTITY(1,1)PRIMARY KEY,
+staffId int not null foreign key references Staff(staffId),
+bookId int foreign key references Book(bookId),
+saleNote varchar(max)
+);
+
+drop table Sale
+
+create table Staff(
+primary key(staffId),
+staffId int not null foreign key references Users(userId),
+staffPosition varchar(max),
+salary int
+);
+
+drop table Staff
+
+create table Report(
+reportId int NOT NULL IDENTITY(1,1)PRIMARY KEY,
+reportText varchar(max),
+dateReported varchar(max),
+staffId int not null foreign key references Staff(staffId),
+); 
+
+drop table Report
+
+
+
+
 
 CREATE TABLE [AspNetRoles] (
           [Id] nvarchar(450) NOT NULL,
