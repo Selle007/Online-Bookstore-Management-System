@@ -9,7 +9,7 @@ namespace BookstoreAPI.Entities
         public int orderId { get; set; }
         [ForeignKey("Book")]
         public int bookId { get; set; }
-        [ForeignKey("AspNetUsers")]
+        [ForeignKey("Users")]
         public int userId { get; set; }
 
 

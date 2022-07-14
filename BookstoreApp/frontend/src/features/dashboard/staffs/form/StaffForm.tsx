@@ -71,6 +71,7 @@ export default observer(function StaffForm() {
                 onSubmit={handleSubmit}
                 autoComplete="off"
               >
+                <MyTextInput name="staffId" placeholder="Staff Id" />
                 <MyTextInput name="staffPosition" placeholder="Staff Position" />
                 <MyTextInput name="salary" placeholder="Salary" />
 

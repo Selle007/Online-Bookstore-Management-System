@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { Button, Header, Segment } from "semantic-ui-react";
-import DashboardNav from "../../DashboardNav";
 import LoadingComponent from "../../../../app/layout/LoadingComponents";
 import { useStore } from "../../../../app/stores/store";
 import "../../../../app/layout/styles.css";
@@ -61,12 +60,6 @@ export default observer(function BookForm() {
 
   }
 
-  const [name, setName] = useState(" ");
-  const handleInput = (event: { target: { value: React.SetStateAction<string>; }; }) => {
-    setName(event.target.value);
-  };
-
-  
 
   
 

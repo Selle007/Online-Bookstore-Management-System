@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { Button, Icon, Input, Menu } from "semantic-ui-react";
 import "../../app/layout/styles.css";
 import AuthService from "../users/AuthService";
+import './NavBar.css'
 
 export default function Navbar() {
   return (

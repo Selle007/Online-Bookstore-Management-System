@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Grid } from "semantic-ui-react";
-import Book from "./BookList";
+import BookList from "./BookList";
 import { useStore } from "../../../app/stores/store";
 import { observer } from "mobx-react-lite";
 import LoadingComponent from "../../../app/layout/LoadingComponents";
@@ -25,7 +25,7 @@ export default observer( function BookDashboard() {
     <Grid>
       
       <Grid.Column width="15">
-        <Book />
+        <BookList />
       </Grid.Column>
       
     </Grid>

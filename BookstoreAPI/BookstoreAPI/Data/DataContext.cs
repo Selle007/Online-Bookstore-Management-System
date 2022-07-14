@@ -22,6 +22,14 @@ namespace WebAPI.Data
         public DbSet<Role> Role { get; set; }
         public DbSet<BookImages> BookImages { get; set; }
         public DbSet<Review> Review { get; set; }
+        public DbSet<Novel> Novel { get; set; }
+        public DbSet<Blog> Blog { get; set; }
+        public DbSet<AudioBook> AudioBook { get; set; }
+        public DbSet<Report> Report { get; set; }
+        public DbSet<Sale> Sale { get; set; }
+        public DbSet<Staff> Staff { get; set; }
+
+
 
 
 

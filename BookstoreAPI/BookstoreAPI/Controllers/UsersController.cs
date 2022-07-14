@@ -33,7 +33,6 @@ namespace BookstoreAPI.Controllers
         }
 
 
-
         [HttpPost]
         public async Task<ActionResult<List<Users>>> CreateUser(Users users)
         {
@@ -58,11 +57,7 @@ namespace BookstoreAPI.Controllers
             dbUsers.RefreshToken = request.RefreshToken;
             dbUsers.TokenCreated = request.TokenCreated;
             dbUsers.TokenExpires = request.TokenExpires;
-            dbUsers.roleName = "User";
-
-
-
-
+           
             await _context.SaveChangesAsync();
 
             return Ok(await _context.Users.ToListAsync());

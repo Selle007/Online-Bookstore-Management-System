@@ -8,6 +8,12 @@ import { Order } from '../models/order';
 import { Stock } from '../models/stock';
 import { Role } from '../models/role';
 import { Review } from '../models/review';
+import { Blog } from '../models/blog';
+import { Novel } from '../models/novel';
+import { Report } from '../models/report';
+import { Sale } from '../models/sale';
+import { Staff } from '../models/staff';
+import { AudioBook } from '../models/audioBook';
 
 const sleep = (delay: number) => {
     return new Promise((resolve) =>{
@@ -111,6 +117,54 @@ const Reviews = {
     delete: (reviewId: string) => axios.delete<void>(`/Reviews/${reviewId}`)
 
 }
+const AudioBooks = {
+    list: () => requests.get<AudioBook[]>('/AudioBook'),
+    details: (audioBookId: string) => requests.get<AudioBook>(`/AudioBook/${audioBookId}`),
+    create: (audioBook: AudioBook) => requests.post<void>(`/AudioBook`, audioBook),
+    update: (audioBook: AudioBook) => axios.put<void>(`/AudioBook/${audioBook.audioBookId}`, audioBook),
+    delete: (audioBookId: string) => axios.delete<void>(`/AudioBook/${audioBookId}`)
+
+}
+const Blogs = {
+    list: () => requests.get<Blog[]>('/Blog'),
+    details: (blogId: string) => requests.get<Blog>(`/Blog/${blogId}`),
+    create: (blog: Blog) => requests.post<void>(`/Blog`, blog),
+    update: (blog: Blog) => axios.put<void>(`/Blog/${blog.blogId}`, blog),
+    delete: (blogId: string) => axios.delete<void>(`/Blog/${blogId}`)
+
+}
+const Staffs = {
+    list: () => requests.get<Staff[]>('/Staff'),
+    details: (staffId: string) => requests.get<Staff>(`/Staff/${staffId}`),
+    create: (staff: Staff) => requests.post<void>(`/Staff`, staff),
+    update: (staff: Staff) => axios.put<void>(`/Staff/${staff.staffId}`, staff),
+    delete: (staffId: string) => axios.delete<void>(`/Staff/${staffId}`)
+
+}
+const Sales = {
+    list: () => requests.get<Sale[]>('/Sale'),
+    details: (saleId: string) => requests.get<Sale>(`/Sale/${saleId}`),
+    create: (sale: Sale) => requests.post<void>(`/Sale`, sale),
+    update: (sale: Sale) => axios.put<void>(`/Sale/${sale.saleId}`, sale),
+    delete: (saleId: string) => axios.delete<void>(`/Sale/${saleId}`)
+
+}
+const Novels = {
+    list: () => requests.get<Novel[]>('/Novel'),
+    details: (novelId: string) => requests.get<Novel>(`/Novel/${novelId}`),
+    create: (novel: Novel) => requests.post<void>(`/Novel`, novel),
+    update: (novel: Novel) => axios.put<void>(`/Novel/${novel.novelId}`, novel),
+    delete: (novelId: string) => axios.delete<void>(`/Novel/${novelId}`)
+
+}
+const Reports = {
+    list: () => requests.get<Report[]>('/Report'),
+    details: (reportId: string) => requests.get<Report>(`/Report/${reportId}`),
+    create: (report: Report) => requests.post<void>(`/Report`, report),
+    update: (report: Report) => axios.put<void>(`/Report/${report.reportId}`, report),
+    delete: (reportId: string) => axios.delete<void>(`/Report/${reportId}`)
+
+}
 const Account = {
 
     login: (user: UserFormValuesLogin) => requests.post<UserFormValuesLogin>(`/Auth/login`, user),
@@ -128,7 +182,13 @@ const agent ={
     Orders,
     Stocks,
     Account,
-    Reviews
+    Reviews,
+    AudioBooks,
+    Novels,
+    Reports,
+    Staffs,
+    Sales,
+    Blogs
 }
 
 export default agent;
